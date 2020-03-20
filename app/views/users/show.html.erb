@@ -56,31 +56,32 @@
             </nav>
 
     </div>
-    
-</div>
-<div class="container posts_content">
+    <div class="container posts_content">
         <div class="row">
             <div class="col d-flex justify-content-center align-items-center">
-            <div id='form_posts'>
-                <div class="container d-flex justify-content-center create_group sign_form">
-                    <%= form_for(@post, url: post_new_url) do |f| %>
+                <div id='form_posts'>
+                    <div class="container d-flex justify-content-center create_group sign_form">
+                        <%= form_for(@post, url: post_new_url(@post)) do |f| %>
 
-                        
-                        <%= f.hidden_field :counter, value: 0 %>
-                        <%= f.hidden_field :user_id, value: current_user.id %>
-                        <div class="field">
-                            <%= f.label :post %><br />
-                            <%= f.text_field :content, autofocus: true %>
-                        </div>
-                        
-                        <%= f.submit 'Create', class: 'btn btn-secondary' %>
-                    <% end %>
+                            
+                            <%= f.hidden_field :counter, value: 0 %>
+                            <%= f.hidden_field :user_id, value: current_user.id %>
+                            <div class="field">
+                                <%= f.label :content %><br />
+                                <%= f.text_field :content, autofocus: true, :size => 50 %>
+                            </div>
+                            
+                            <%= f.submit 'Create', class: 'btn btn-secondary' %>
+                        <% end %>
+                    </div>
                 </div>
             </div>
-            </div>
-            <div class="col-2">
+            <div class="col" style= 'border: 2px solid red'>
                 One of three columns
             </div>
             
         </div>
     </div>
+</div>
+
+

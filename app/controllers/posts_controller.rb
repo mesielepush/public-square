@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
     before_action :authenticate_user!
     def new
-       
+        @post = Post.new
     end
     def create
-        @post = Post.new(content: params[:content], counter: params[:counter],user_id: params[:user_id])
+        @post = current_user.posts.new(content: params[:content], counter: params[:counter])
 
         if @post.save
 

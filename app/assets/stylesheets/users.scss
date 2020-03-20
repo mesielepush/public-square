@@ -5,7 +5,7 @@
     margin-top: -3.8rem;
 }
 .main{
-    background: red;
+   
     display: flex;
     
 }
@@ -15,12 +15,9 @@
     
 }
 
-.rojo{
-    background: red;
-}
 
 .wrapper {
-    position: absolute;
+    position: relative;
     display: flex;
     align-items: stretch;
 }
@@ -114,5 +111,5 @@ ul ul a {
     background: #6d7fcc;
 }
 .form_posts{
-    
+    max-width: 30rem;
 }
