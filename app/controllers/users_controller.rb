@@ -1,3 +1,10 @@
 class UsersController < ApplicationController
     before_action :authenticate_user!
+    def show
+        @post = Post.new
+    end
+    def create
+        
+    end
+
 end

@@ -1,16 +1,26 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.main{
-    background: red;;
+.top-nav{
+    margin-top: -3.8rem;
 }
-
+.main{
+    background: red;
+    display: flex;
+    
+}
+.posts_content{
+    position: relative;
+    left: 3.6rem;
+    
+}
 
 .rojo{
     background: red;
 }
 
 .wrapper {
+    position: absolute;
     display: flex;
     align-items: stretch;
 }
@@ -43,16 +53,13 @@ a[data-toggle="collapse"] {
     }
 }
 
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-
-
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: #fafafa;
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -105,4 +112,7 @@ ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
     background: #6d7fcc;
+}
+.form_posts{
+    
 }
