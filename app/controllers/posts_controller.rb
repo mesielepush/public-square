@@ -4,7 +4,8 @@ class PostsController < ApplicationController
         @post = Post.new
     end
     def create
-        @post = current_user.posts.new(content: params[:content], counter: params[:counter])
+        
+        @post = current_user.posts.new(post_params)
 
         if @post.save
 
@@ -14,5 +15,7 @@ class PostsController < ApplicationController
         render :show, alert: 'demand was not created.'
         end
     end
-    
+    def post_params
+        params.require(:post).permit(:counter, :content)
+      end
 end

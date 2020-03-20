@@ -1,8 +1,10 @@
-<nav class="top-nav navbar navbar-light bg-light">
+<nav class="top-nav navbar navbar-light bg-light" id='top_bar' style='background-image: url("<%=current_user.avatar%>") ;'>
     <a class="navbar-brand" href="#">
         <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
         Public Square
     </a>
+    
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
 </nav>
 
 <div class="main">
@@ -83,5 +85,3 @@
         </div>
     </div>
 </div>
-
-

@@ -1,6 +1,16 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+#top_bar{
+    height: 10rem;;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    box-shadow:  0px 0px 80px rgba(27, 27, 29, 0.8);
+
+}
 .top-nav{
     margin-top: -3.8rem;
 }

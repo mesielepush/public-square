@@ -3,8 +3,5 @@ class UsersController < ApplicationController
     def show
         @post = Post.new
     end
-    def create
-        
-    end
-
+    
 end
