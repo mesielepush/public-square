@@ -8,80 +8,96 @@
 </nav>
 
 <div class="main">
-    <div class="wrapper">
-            <!-- Sidebar -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Bootstrap Sidebar</h3>
-                </div>
-
-                <ul class="list-unstyled components">
-                    <p>Dummy Heading</p>
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li>
-                                <a href="#">Home 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-
-    </div>
+    
     <div class="container posts_content">
-        <div class="row">
-            <div class="col d-flex justify-content-center align-items-center">
-                <div id='form_posts'>
-                    <div class="container d-flex justify-content-center create_group sign_form">
-                        <%= form_for(@post, url: post_new_url(@post)) do |f| %>
+        <div class="row ">
+            <div class="wrapper col-3">
+                    <!-- Sidebar -->
+                    <nav id="sidebar">
+                        <div class="sidebar-header">
+                            <h3>Bootstrap Sidebar</h3>
+                        </div>
 
-                            
-                            <%= f.hidden_field :counter, value: 0 %>
-                            <%= f.hidden_field :user_id, value: current_user.id %>
-                            <div class="field">
-                                <%= f.label :content %><br />
-                                <%= f.text_field :content, autofocus: true, :size => 50 %>
-                            </div>
-                            
-                            <%= f.submit 'Create', class: 'btn btn-secondary' %>
-                        <% end %>
+                        <ul class="list-unstyled components">
+                            <p>Dummy Heading</p>
+                            <li class="active">
+                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
+                                    <li>
+                                        <a href="#">Home 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Home 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Home 3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                                <ul class="collapse list-unstyled" id="pageSubmenu">
+                                    <li>
+                                        <a href="#">Page 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Page 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Page 3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+            </div>
+            <div class="col-6 d-flex justify-content-center align-items-center central_row mt-5">
+                
+                <div class="all_posts">
+                    <div id='form_posts'>
+                        <div class="container d-flex justify-content-center create_group sign_form">
+                            <%= form_for(@post, url: post_new_url(@post)) do |f| %>
+
+                                
+                                <%= f.hidden_field :counter, value: 0 %>
+                                <%= f.hidden_field :user_id, value: current_user.id %>
+                                <div class="field">
+                                    <%= f.label :New_post %><br />
+                                    <%= f.text_field :content, autofocus: true, :size => 50 %>
+                                </div>
+                                
+                                <%= f.submit 'Create', class: 'btn btn-secondary' %>
+                            <% end %>
+                        </div>
                     </div>
+                    <% @posts.each do |post| %>
+                        <div class="post_front_page">
+                            <%=post.content%>
+                            <p class="op_name">
+                                <%= User.find_by_id(post.user_id).email %>
+                            </p>
+                            <p><%= time_ago_in_words(post.created_at) %> ago.</p>
+                        </div>
+                        <%end%>
                 </div>
             </div>
-            <div class="col" style= 'border: 2px solid red'>
-                One of three columns
+
+            <div class="col 3_colum mt-5">
+               ssdfgsdfgsdfgsdfg
             </div>
             
+            
         </div>
+        
     </div>
 </div>

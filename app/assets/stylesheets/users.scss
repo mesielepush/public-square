@@ -21,16 +21,13 @@
 }
 .posts_content{
     position: relative;
-    left: 3.6rem;
     
 }
-
-
 .wrapper {
     position: relative;
     display: flex;
     align-items: stretch;
-}
+    margin-left:0}
 
 #sidebar.active {
     margin-left: -250px;
@@ -120,6 +117,15 @@ ul ul a {
     padding-left: 30px !important;
     background: #6d7fcc;
 }
-.form_posts{
-    max-width: 30rem;
+.central_row{
+    position: relative;
+    
+    max-width: 75rem;
+   
+}
+.post_front_page{
+    margin: 1rem;
+}
+#3_colum{
+    font-size: 5rem!important;
 }
