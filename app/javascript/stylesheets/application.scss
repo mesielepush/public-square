@@ -164,8 +164,34 @@ main {
 
 .right-pane {
     float: right;
+    position: relative;
+    top:-0.5rem;
     background-color: $twitter-dark;
-    height: 100%;
+    height: 100rem;
+    color: white;
+    
+    z-index: 1!important;
+    ul{
+        li{
+            list-style-type: none;
+            a {
+                color: #bdb8d7;
+                text-decoration: none!important;
+                box-shadow: -1px 11px 31px 0px rgba(0,0,0,0.75);
+                display: block;
+                text-align: center;
+                font-size: 1rem;
+                padding: 1rem;
+                
+            }
+            a:hover{
+                text-decoration: none!important;
+                background: rgb(39, 40, 43);
+                box-shadow: 2px 25px 109px 55px rgba(0,0,0,0.75);
+            }
+        }
+    }
+    
     // position: fixed;
 }
 
@@ -180,7 +206,7 @@ main {
     position: fixed;
     width: 100%;
     clear: both;
-    z-index: 10;
+    z-index: 10000!important;
     height: 3.3rem;
     ul {
         list-style: none;
@@ -197,39 +223,14 @@ main {
     }
 }
 
-.right-nav {
-    height: 100%;
-    width: 250px;
-    position: relative;
-    // background-color: $twitter-dark;
-    border-left: 1px solid $twitter-light-grey;
-    padding-top: 36px;
-    h2 {
-        text-align: left;
-        font-size: 14px;
-        padding-left: 15px;
-        padding-top: 10px;
-    }
-    ul {
-        padding-left: none;
-        li {
-            list-style-type: none;
-            padding: 15px;
-            border-bottom: 1px solid rgba($color: #000000, $alpha: 0.05);
-            border-top: 1px solid rgba(225, 225, 225, 0.05);
-            a {
-                color: #bdb8d7;
-                display: block;
-            }
-        }
-    }
-}
+
 .nav_adjust {
     position: fixed;
     top:0;
 }
 .user_email{
     color: white;
+    padding-bottom: 1rem;
     font-size: 1.5rem;;
 }
 .left_list{
