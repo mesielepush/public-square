@@ -1,0 +1,14 @@
+<div class="sidebar d-flex flex-column" >
+    <h4 class='user_email'> <%= current_user.email%> </h4>
+    
+    <ul class='left_list float-left'> 
+        <li><a href="#"><%= link_to 'home', ''%></a></li>
+        <li><a href="#"><%= link_to 'profile', ''%></a></li>
+        <li><a href="#"><%= link_to 'following', ''%></a></li>
+        <li><a href="#"><%= link_to 'followers', ''%></a></li>
+
+        <li><a href="#"><%= link_to 'sign out', destroy_user_session_path, method: :delete%></a></li>
+        <li><a href="#">lorem</a></li>
+        <li><a href="#">ipsum</a></li>
+    </ul>
+</div>

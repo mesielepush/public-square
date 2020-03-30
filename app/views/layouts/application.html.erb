@@ -16,7 +16,25 @@
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 
+      <div class="wrapper">
+          <% if current_user %>
+            <section class="float nav_adjust">
+              <%= render 'layouts/leftnav'%>
+              <%= render 'layouts/navbar' %>
+              
+            </section>
+            
+            <main class="content">
+              <%= render 'layouts/rightbar' %>
+              
+              
+            </main>
 
+          <% end %>
+          
+              <%= yield %>
+
+        </div>
       
 
 
