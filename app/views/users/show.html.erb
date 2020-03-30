@@ -1,1 +1,15 @@
-asdfasdfasdf
+<div class="d-flex flex-column gral_post">
+    <% @posts.each do |post| %>
+        <div class="post_general">
+            <h5>
+                <%= post.content%>
+            </h5>
+            <p>
+                <%= User.find_by_id(post.user_id).email %>
+            </p>
+            <p>
+                <%= time_ago_in_words(post.created_at) + ' ago' %> 
+            </p>
+        </div>
+    <%end%>
+</div>

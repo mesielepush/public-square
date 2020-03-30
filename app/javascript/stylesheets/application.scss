@@ -112,7 +112,6 @@ main {
     z-index: 1;
 }
 
-//navigation------------------test-------------
 .nav-bar ul {
     list-style-type: none;
     margin: 0;
@@ -167,9 +166,9 @@ main {
     position: relative;
     top:-0.5rem;
     background-color: $twitter-dark;
-    height: 100rem;
+    height: 100%;
     color: white;
-    
+    width: 14rem;
     z-index: 1!important;
     ul{
         li{
@@ -236,4 +235,15 @@ main {
 .left_list{
     position: relative;
     left:-2rem;
+}
+.gral_post{
+    
+    position: relative;
+    left:16rem;
+    max-width: 40rem; ;
+}
+.post_general{
+    position: relative;
+    
+    padding:1rem;
 }
