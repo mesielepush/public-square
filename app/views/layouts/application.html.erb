@@ -15,12 +15,12 @@
   <body>
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-
+      <%= render 'layouts/navbar' %>
       <div class="wrapper">
           <% if current_user %>
             <section class="float nav_adjust">
               <%= render 'layouts/leftnav'%>
-              <%= render 'layouts/navbar' %>
+              
               
             </section>
             

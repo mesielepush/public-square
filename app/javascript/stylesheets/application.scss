@@ -57,109 +57,42 @@ body {
     }
 }
 
-main {
-    // width: 100%;
-    padding-left: 250px;
-}
 
-.tweets {
-    width: 800px;
-}
 
-.show-page {
-    padding-left: 255px;
-    background-color: #eee;
-    display: inline-block;
-    height: 100%;
-    .main-info {
-        padding-top: 30px;
-        .content {
-            background: green;
-            padding-top: 15rem;;
-            .jumbotron {
-                border: 1px solid $twitter-light-grey;
-                margin: 40px 0px 29px 25px;
-                padding: 10px 10px;
-                background-color: #fff;
-                .tweet-input {
-                    width: 80%;
-                    padding-bottom: 5px;
-                    height: 35px;
-                    width: 750px;
-                }
-                .submit-tweet {
-                    width: 50px;
-                    margin-top: 10px;
-                }
-                .tweets {
-                    padding: 10px;
-                }
-            }
-        }
-    }
-    // .row {
-    //     // width: 100%;
-    //     // height: 100%
-    // }
-}
-
-.navigation nav {
-    width: 70%;
-    border-bottom: 1px solid #e2e2e2;
-    background-color: #fff;
+.nav-bar{
+    background-color: $twitter-blue;
     position: fixed;
-    top: 0;
-    z-index: 1;
-}
-
-.nav-bar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #1da1f2;
-    text-align: right;
-    li {
-        float: left;
-        a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        a:hover {
-            background-color: #111;
-        }
-    }
-}
-
-.semi-nav {
-    border-bottom: 1px solid $twitter-light-grey;
-    padding-top: 20px;
-    width: 105%;
-    position: absolute;
-    top: 1rem;
+    width: 100%;
+    clear: both;
+    z-index: 10000!important;
+    height: 3.3rem;
     ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #eee;
+        
         text-align: right;
         li {
-            float: left;
+            float: right;
+            display: flex;
             a {
                 display: block;
-                color: #666;
+                color: white;
                 text-align: center;
-                text-transform: uppercase;
                 padding: 14px 16px;
                 text-decoration: none;
+                background:$twitter-blue;;
+                box-shadow: -1px 11px 31px 0px rgba(0,0,0,0.75);
+            }
+            a:hover {
+                background-color: rgb(56, 56, 56);
             }
         }
     }
 }
+    
+
 
 .right-pane {
     float: right;
@@ -169,8 +102,9 @@ main {
     height: 100%;
     color: white;
     width: 14rem;
-    z-index: 1!important;
+    z-index: 2!important;
     ul{
+        float: right;
         li{
             list-style-type: none;
             a {
@@ -200,27 +134,6 @@ main {
     position: sticky;
 }
 
-.nav-bar {
-    background-color: $twitter-blue;
-    position: fixed;
-    width: 100%;
-    clear: both;
-    z-index: 10000!important;
-    height: 3.3rem;
-    ul {
-        list-style: none;
-        // text-align: right;
-        float: right;
-        li {
-            display: flex;
-            color: white;
-            a {
-                background:$twitter-blue;;
-                box-shadow: -1px 11px 31px 0px rgba(0,0,0,0.75);
-            }
-        }
-    }
-}
 
 
 .nav_adjust {
