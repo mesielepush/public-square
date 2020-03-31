@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'pg'
 gem 'faker'
 gem 'devise'
-
+gem 'inline_svg'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

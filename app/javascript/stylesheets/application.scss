@@ -60,12 +60,13 @@ body {
 
 
 .nav-bar{
-    background-color: $twitter-blue;
+    background-color: rgb(217, 94, 221);
     position: fixed;
+    top:0;
     width: 100%;
     clear: both;
     z-index: 10000!important;
-    height: 3.3rem;
+    height: 3.2rem;
     ul {
         list-style-type: none;
         margin: 0;
@@ -82,27 +83,48 @@ body {
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
-                background:$twitter-blue;;
+                background:rgb(217, 94, 221);
                 box-shadow: -1px 11px 31px 0px rgba(0,0,0,0.75);
             }
             a:hover {
-                background-color: rgb(56, 56, 56);
+                background-color: rgb(211, 112, 112)!important;
             }
         }
     }
 }
-    
-
+.lef_nav_icons{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background:rgb(217, 94, 221);
+    box-shadow: -1px 11px 31px 0px rgba(0,0,0,0.75);
+            }
+.lef_nav_icons:hover {
+    background-color: rgb(211, 112, 112)!important;
+}
+.some-class {
+    display: block;
+    margin: 0 auto;
+    fill: #510d5a;
+    width: 5em;
+    height: 5em;
+    box-shadow: -1px 11px 31px 0px rgba(0,0,0,0.75);
+  }
 
 .right-pane {
     float: right;
-    position: relative;
-    top:-0.5rem;
+    position: fixed;
+    top:1rem;
+    right:0;
     background-color: $twitter-dark;
     height: 100%;
     color: white;
-    width: 14rem;
+    width: 14.7rem;
     z-index: 2!important;
+    padding-top: 3rem!important;
+    overflow-y: scroll;
     ul{
         float: right;
         li{

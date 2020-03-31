@@ -1,13 +1,20 @@
 
-<nav class="nav-bar">
-    
-                
+<nav class="nav-bar d-flex justify-content-between">
+        
+        <ul>
+            
+            <li><a class="active" href= '' class='lef_nav_icons'>tweets</a></li>
+            <li><a href="#news" class='lef_nav_icons'>News</a></li>
+            <li><a href="#contact" class='lef_nav_icons'>Contact</a></li>
+            
+        </ul>
+            <%= inline_svg_tag "logo.svg", class: 'some-class' %>
         <ul>
             
             <li><a class="active" href= ''>tweets</a></li>
             <li><a href="#news">News</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
+            
         </ul>
    
 </nav>
