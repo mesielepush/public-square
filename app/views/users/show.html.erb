@@ -1,5 +1,10 @@
 <div class="d-flex flex-column gral_post">
-    <div class="col d-flex justify-content-center align-items-center pb-5">
+    <div class=" d-flex justify-content-start">
+        <span id='my_tweets_title'>
+        My gossips
+        </span> 
+    </div>
+    <div class="col d-flex justify-content-center align-items-center">
         <div id='form_posts'>
             <div class="container d-flex justify-content-center create_group sign_form">
                 <%= form_for(@post, url: post_new_url(@post)) do |f| %>

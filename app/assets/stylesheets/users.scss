@@ -4,11 +4,20 @@
 .gral_post{
     position: relative;
     top:5rem;
-    left:17rem;
+    left:20rem;
     max-width: 40rem; ;
 }
 .post_general{
     position: relative;
-    
+    margin-top:2rem;
     padding:1rem;
+}
+.sign_form{
+    padding-bottom: 2rem;
+}
+#my_tweets_title{
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 2rem;
+    color: #27152b
 }

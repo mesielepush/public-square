@@ -7,7 +7,7 @@ $twitter-light-grey: #ccc;
 body {
     padding: 0;
     margin: 0;
-    background-color: #eee;
+    background-color: rgb(226, 216, 202)
 }
 
 .wrapper {
@@ -17,7 +17,7 @@ body {
     }
     .sidebar {
         position: fixed;
-        width: 14rem;;
+        width: 14rem;
         height: 100%;
         top:5rem;
         left:0;
@@ -60,7 +60,7 @@ body {
 
 
 .nav-bar{
-    background-color: rgb(217, 94, 221);
+    background-color: #F7C099;
     position: fixed;
     top:0;
     width: 100%;
@@ -83,7 +83,7 @@ body {
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
-                background:rgb(217, 94, 221);
+                background:#F7C099;
                 box-shadow: -1px 11px 31px 0px rgba(0,0,0,0.75);
             }
             a:hover {
@@ -94,24 +94,43 @@ body {
 }
 .lef_nav_icons{
     display: block;
-    color: white;
+    color: rgb(47, 35, 58)!important;
     text-align: center;
+    font-weight: 500;
     padding: 14px 16px;
     text-decoration: none;
-    background:rgb(217, 94, 221);
+    background:#F7C099;
     height: 5rem;
     box-shadow: -1px 11px 31px 0px rgba(0,0,0,0.75);
             }
 .lef_nav_icons:hover {
     background-color: rgb(211, 112, 112)!important;
 }
+.log_in{
+    color: black;
+    background-image: url('https://bit.ly/3bFjgMz');
+    background-position: center; /* Center the image */
+    margin-top: 10rem;
+}
+.form_init{
+    background-color: rgba(248, 247, 216, 0.2);
+    position: relative;
+    top: 5rem;;
+    padding-top: 5rem;;
+    left: 0;
+    width: 110%;
+    height: 110%;
+}
+
 .some-class {
     display: block;
     margin: 0 auto;
     fill: #510d5a;
     width: 5em;
-    height: 5em;
-    box-shadow: -1px 11px 31px 0px rgba(0,0,0,0.75);
+    margin-left: 2rem;;
+    margin-right: 2rem;;
+    height: 4.5em;
+    
   }
 
 .right-pane {
