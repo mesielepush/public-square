@@ -8,6 +8,7 @@
 #  content    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  avatar     :string
 #
 
 class Post < ApplicationRecord

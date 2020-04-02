@@ -1,19 +1,11 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.gral_post{
-    position: relative;
-    top:5rem;
-    left:20rem;
-    max-width: 40rem; ;
-}
-.post_general{
-    position: relative;
-    margin-top:2rem;
-    padding:1rem;
-}
+
 .sign_form{
-    padding-bottom: 2rem;
+    background: rgba(126, 117, 117, 0.5);
+    padding: 1rem;
+    margin-bottom: 2rem;;;
 }
 #my_tweets_title{
     font-size: 2rem;
@@ -24,4 +16,9 @@
 .follow-data{
     position: relative;
     
+}
+#show_cards_user{
+    position: relative;
+    
+    width: 40rem;;
 }
