@@ -9,12 +9,12 @@
             <div class="container d-flex justify-content-center create_group sign_form">
                 <%= form_for(@post, url: post_new_url(@post)) do |f| %>
                     <h3 class='text-center'>New Post</h3>
-                    <div class="field">
+                    <div class="field text-center">
                         <%= f.label :avatar_url %><br />
                         <%= f.text_field :avatar, autofocus: true %>
                     </div>
                     
-                    <div class="field">
+                    <div class="field text-center" >
                         <%= f.label :message %><br />
                         <%= f.text_field :content, autofocus: true, :size => 50 %>
                     </div>
@@ -29,7 +29,7 @@
         </div>
     </div>
     <% current_user.posts.sort_by(&:created_at).reverse.each do |post| %>
-        <div class="cards_user container d-flex flex-column justify-content-center al">
+        <div class="cards_user container d-flex flex-column justify-content-center cards_post">
             <div class="card align-content-center justify-content-center"  style="width: 40rem;position: relative;left:16rem!important;">
                 <img class="card-img-top photo_card" src=<%=post.avatar%> alt="Card image cap">
                 <div class="card-body " id='show_cards_user'>
