@@ -1,8 +1,21 @@
 <div class="right-pane p-3">
     <h4 class='user_email'> who to follow</h4>
-    <ul class="follow-data left_list d-flex flex-column">
-         <% 10.times do%>
-            <li class='text-center'> <a href=""> <%= current_user.email%></a><br><br></li>
-        <% end %>
+    <ul class="follow-data left_list d-flex flex-column text-center justify-content-center">
+         
+         <% if User.all.size < 20 %>
+         
+            <% User.all.each do |user| %>
+            
+                <li> <a href=""><%=user.email[0..15]%></a>  </li>
+            <%end%>
+        <%else%>
+        
+            <% User.all.take(20).each do |user| %>
+                
+                <li> <a href=""><%=user.email[0..15]%></a></li>
+            <%end%>
+        <%end%>
+         
+         
     </ul>
 </div>

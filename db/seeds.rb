@@ -16,8 +16,11 @@ user5.save
 user6.save
 
 users = [user1,user2,user3,user4,user5,user6]
-
+20.times do
+    User.new( email: Faker::Internet.email, avatar: "https://loremflickr.com/#{rand(320..360)}/#{rand(320..360)}", password: 'pppppp', password_confirmation: 'pppppp').save
+end
 10.times do
+
     users.each do |user|
 
         user.posts.create(content: Faker::Quote.matz, counter: 0)
