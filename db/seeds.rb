@@ -23,7 +23,7 @@ end
 
     users.each do |user|
 
-        user.posts.create(content: Faker::Quote.matz, counter: 0)
+        user.posts.create(content: Faker::Quote.matz, counter: 0, avatar:"https://loremflickr.com/#{rand(750..850)}/#{rand(550..650)}")
 
     end
 end

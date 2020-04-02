@@ -22,3 +22,15 @@
     
     width: 40rem;;
 }
+.likes_counter{
+    position: relative;
+    padding:1rem ;
+    border: rgba(182, 179, 179,0.5) 4px solid
+}
+#likes_up, #likes_down{
+    width: 50px;
+    height: 50px;
+}
+.counter{
+    font-size: 2.5rem;;
+}
