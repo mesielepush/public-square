@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   post '/post_new', to: 'posts#create'
   get '/post_show', to: 'posts#show'
   get '/likes_update', to: 'likes#update'
-
+  get '/user_show', to: 'users#show'
+  get '/post_index', to: 'posts#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
