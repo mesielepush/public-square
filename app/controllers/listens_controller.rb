@@ -1,2 +1,0 @@
-class ListensController < ApplicationController
-end

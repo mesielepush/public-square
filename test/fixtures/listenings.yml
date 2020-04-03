@@ -1,21 +1,17 @@
 # == Schema Information
 #
-# Table name: likes
+# Table name: listenings
 #
 #  id         :bigint           not null, primary key
-#  post_id    :integer
-#  result     :integer
+#  other_id   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  user_id    :integer
 #
 
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  post_id: 1
-  result: 1
+  other_id: MyString
 
 two:
-  post_id: 1
-  result: 1
+  other_id: MyString

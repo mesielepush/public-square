@@ -11,5 +11,5 @@
 #
 
 class Response < ApplicationRecord
-    belongs_ to :post
+    belongs_to :post
 end

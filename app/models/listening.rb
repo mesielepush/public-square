@@ -1,16 +1,12 @@
 # == Schema Information
 #
-# Table name: likes
+# Table name: listenings
 #
 #  id         :bigint           not null, primary key
-#  post_id    :integer
-#  result     :integer
+#  other_id   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  user_id    :integer
 #
 
-class Like < ApplicationRecord
-    belongs_to :user
-    
+class Listening < ApplicationRecord
 end

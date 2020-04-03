@@ -1,16 +1,17 @@
 # == Schema Information
 #
-# Table name: likes
+# Table name: listenings
 #
 #  id         :bigint           not null, primary key
-#  post_id    :integer
-#  result     :integer
+#  other_id   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  user_id    :integer
 #
 
-class Like < ApplicationRecord
-    belongs_to :user
-    
+require 'test_helper'
+
+class ListeningTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

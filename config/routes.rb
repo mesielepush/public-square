@@ -26,6 +26,7 @@
 #                                       PUT    /posts/:id(.:format)                                                                     posts#update
 #                                       DELETE /posts/:id(.:format)                                                                     posts#destroy
 #                              post_new POST   /post_new(.:format)                                                                      posts#create
+#                          likes_update GET    /likes_update(.:format)                                                                  likes#update
 #         rails_mandrill_inbound_emails POST   /rails/action_mailbox/mandrill/inbound_emails(.:format)                                  action_mailbox/ingresses/mandrill/inbound_emails#create
 #         rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                  action_mailbox/ingresses/postmark/inbound_emails#create
 #            rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                     action_mailbox/ingresses/relay/inbound_emails#create
@@ -47,10 +48,13 @@
 #                  rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
 
 Rails.application.routes.draw do
+  
   devise_for :users
   root to: 'users#show'
   resources :posts
   post '/post_new', to: 'posts#create'
+  
+  get '/likes_update', to: 'likes#update'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
