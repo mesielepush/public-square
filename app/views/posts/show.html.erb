@@ -3,13 +3,16 @@
 <div class="cards_user container d-flex flex-column justify-content-center" style='margin-top:5rem;'>
     
     <div class="card align-content-center justify-content-center"  style="width: 35rem;position: relative;left:16rem!important;">
-        <img class="card-img-top photo_card" src=<%=@post.avatar%> alt="@post Image">
+        <img class="card-img-top photo_card img-fluid" src=<%=@post.avatar%> alt="@post Image">
         <div class="card-body " id='show_cards_user1'>
-            
-            <p class = 'text-center' style='background:rgba(182, 177, 177,.5)'>
-                <%= User.find_by_id(@post.user_id).email %>
-            </p>
-            <p class="card-text">
+            <div class="post_creator d-flex justify-content-between">
+                <img src=<%= User.find_by_id(@post.user_id).avatar  %> alt="" class='img-fluid rounded-circle' style='width:40px;height:40px;box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);'>
+                <p class = 'text-center user_email' style='color:#251429; font-weight:800;box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);'>
+                    <%= User.find_by_id(@post.user_id).email %>
+                </p>
+                <a href=""><img src="https://i.imgur.com/AsE7LHx.png" alt="" style='height: 45px'></a>
+                </div>
+            <p class="card-text post_content">
                 <%= @post.content %>
             </p>
             <p style='padding-bottom:2rem;'>

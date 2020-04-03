@@ -24,7 +24,8 @@
 }
 #show_cards_user1{
     position: relative;
-    
+    color:white;
+    background: #27152B;
     width: 35rem;;
 }
 .likes_counter{
@@ -36,12 +37,11 @@
     width: 50px;
     height: 50px;
 }
-.counter{
-    font-size: 2.5rem;;
-}
 .likes_counter1{
     position: relative;
     height: 5rem;
-    padding:1rem ;
+    padding:1rem;
+    background:#E2D8CA;
+    color: black;
     border: rgba(182, 179, 179,0.5) 4px solid
 }

@@ -186,7 +186,6 @@ body {
 }
 .user_email{
     color: white;
-    padding-bottom: 1rem;
     font-size: 1.5rem;;
 }
 .left_list{
@@ -199,4 +198,17 @@ body {
 }
 .cards_post{
     margin-bottom: 1rem;;
+}
+
+.post_creator{
+    padding: 1rem;
+    background: rgb(224, 221, 221);
+    height: 4rem;;
+}
+.post_content{
+    margin-top: 2rem;;
+}
+
+.counter{
+    font-size: 2.5rem;;
 }
