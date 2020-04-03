@@ -15,6 +15,13 @@ class PostsController < ApplicationController
         render :show, alert: 'demand was not created.'
         end
     end
+    def show
+        @post = Post.find_by_id(params[:id])
+    end
+
+
+
+    private
     def post_params
         params.require(:post).permit(:counter, :content, :avatar)
       end

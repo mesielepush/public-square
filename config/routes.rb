@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   root to: 'users#show'
   resources :posts
   post '/post_new', to: 'posts#create'
-  
+  get '/post_show', to: 'posts#show'
   get '/likes_update', to: 'likes#update'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
