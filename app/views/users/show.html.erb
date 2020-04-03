@@ -39,25 +39,45 @@
                         <%= time_ago_in_words(post.created_at) + ' ago' %> 
                     </p>
                     <div class="likes_counter text-center d-flex justify-content-around">
-                        <% if current_user.likes.find_by_post_id(@post.id) == nil %>
-                            <a href=<%=likes_update_url(post_id: post.id, vote: 1)%>>
-                                <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_up'>
+                        <% if current_user.likes.find_by_post_id(post.id) == nil %>
+
+                            <a href=<%=likes_update_url(post_id: post.id, vote: -1)%>>
+                                <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>
                             </a>
                             
                             <span class="counter">
                                 <%=post.counter%>
                             </span>
-                            <a href=<%=likes_update_url(post_id: post.id, vote: -1)%>>
-                                <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_down'>
+                            <a href=<%=likes_update_url(post_id: post.id, vote: 1)%>>
+                                <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_up'>
                             </a>
-                        <%else%>
-                        <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_up'>
-
-                        <span class="counter">
-                            <%=post.counter%>
-                        </span>
                         
-                        <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_down'>
+                        <%else%>
+                            <% if current_user.likes.find_by_post_id(post.id).result == 1 %>
+                                <a href=<%=likes_update_url(post_id: post.id, vote: -1)%>>
+                                    <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>
+                                </a>
+                                <span class="counter">
+                                    <%=post.counter%>
+                                </span>
+
+                                
+                                <img src="https://i.imgur.com/QSyr92p.png" alt="" id='likes_up'>
+                                
+
+                            <%else%>
+                                
+                                <img src="https://i.imgur.com/Y51wRgl.png" alt="" id='likes_down'>
+                                
+                                <span class="counter">
+                                    <%=post.counter%>
+                                </span>
+
+                                <a href=<%=likes_update_url(post_id: post.id, vote: 1)%>>
+                                    <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_up'>
+                                </a>
+
+                            <%end%>
 
                         <%end%>
                         
