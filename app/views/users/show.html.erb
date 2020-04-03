@@ -33,9 +33,15 @@
             <div class="card align-content-center justify-content-center"  style="width: 40rem;position: relative;left:16rem!important;">
                 <img class="card-img-top photo_card" src=<%=post.avatar%> alt="Post Image">
                 <div class="card-body " id='show_cards_user'>
-                    
-                    <p class="card-text"><%= post.content %></p>
-                    <p>
+                    <div class="post_creator d-flex justify-content-between">
+                        <img src=<%= User.find_by_id(post.user_id).avatar  %> alt="" class='img-fluid rounded-circle' style='width:40px;height:40px;box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);'>
+                        <p class = 'text-center user_email' style='color:#251429; font-weight:800;box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);'>
+                            <%= User.find_by_id(post.user_id).email %>
+                        </p>
+                        <a href=""><img src="https://i.imgur.com/AsE7LHx.png" alt="" style='height: 45px'></a>
+                    </div>
+                    <p class="card-text post_content"><%= post.content %></p>
+                    <p style='padding-bottom:2rem;color:#E2D8CA'>
                         <%= time_ago_in_words(post.created_at) + ' ago' %> 
                     </p>
                     <div class="likes_counter text-center d-flex justify-content-around">

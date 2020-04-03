@@ -60,7 +60,7 @@ body {
 
 
 .nav-bar{
-    background-color: #F7C099;
+    background-color: rgb(160, 111, 55);
     position: fixed;
     top:0;
     width: 100%;
@@ -211,4 +211,52 @@ body {
 
 .counter{
     font-size: 2.5rem;;
+}
+
+.sign_form{
+    background: rgba(126, 117, 117, 0.5);
+    padding: 1rem;
+    margin-bottom: 2rem;;;
+}
+#my_tweets_title{
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 2rem;
+    color: #27152b
+}
+.follow-data{
+    position: relative;
+    
+}
+#show_cards_user{
+    position: relative;
+    color:white;
+    background: #27152B;
+    width: 40rem;;
+}
+#show_cards_user1{
+    position: relative;
+    color:white;
+    background: #27152B;
+    width: 35rem;;
+}
+.likes_counter{
+    position: relative;
+    height: 5rem;
+    padding:1rem;
+    background:#E2D8CA;
+    color: black;
+    border: rgba(182, 179, 179,0.5) 4px solid
+}
+#likes_up, #likes_down{
+    width: 50px;
+    height: 50px;
+}
+.likes_counter1{
+    position: relative;
+    height: 5rem;
+    padding:1rem;
+    background:#E2D8CA;
+    color: black;
+    border: rgba(182, 179, 179,0.5) 4px solid
 }
