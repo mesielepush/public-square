@@ -150,7 +150,7 @@
                             </p>
                         </div>
                         <div sytle='position:relative'>
-                            <% if current_user.listenings.where(other_id: @user.id) %>
+                            <% if current_user.listenings.where(other_id: @user.id).exists? %>
                                 
                                 <img  id = 'new_post_icon' class='img-fluid' src="https://i.imgur.com/f2EwRe2.png" alt="Follow">
                                 

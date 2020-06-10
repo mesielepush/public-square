@@ -7,7 +7,7 @@ $twitter-light-grey: #ccc;
 body {
     padding: 0;
     margin: 0;
-    background-color: rgb(36, 14, 41)
+    background-color: white
 }
 
 .wrapper {
@@ -21,7 +21,7 @@ body {
         height: 100%;
         top:5rem;
         left:0;
-        background-color: $twitter-dark;
+        background-color: #213346;
         padding: 1rem;
         padding-top: 2rem;
         span {
@@ -50,7 +50,7 @@ body {
                 }
                 a:hover{
                     background: rgb(39, 40, 43);
-                    box-shadow: 2px 11px 85px 74px rgba(0,0,0,0.75);
+                    ;
                 }
             }
         }
@@ -63,7 +63,7 @@ body {
 }
 
 .nav-bar{
-    background-color: #27152B;
+    background-color: #1A91DA;
     position: fixed;
     top:0;
     width: 100%;
@@ -97,7 +97,7 @@ body {
 }
 .lef_nav_icons{
     display: block;
-    color: rgb(47, 35, 58)!important;
+    color: #213346!important;
     text-align: center;
     font-weight: 500;
     padding: 14px 16px;
