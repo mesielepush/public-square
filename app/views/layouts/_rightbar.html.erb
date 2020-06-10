@@ -6,13 +6,13 @@
          
             <% User.all.each do |user| %>
             
-                <li> <a href=<%= user_show_url(user_id: user.id) %>><%=user.email[0..15]%></a></li>
+                <li> <a href=<%= user_show_url(user_id: user.id, current_id: current_user.id ) %>><%=user.email[0..15]%></a></li>
             <%end%>
         <%else%>
         
             <% User.all.take(20).each do |user| %>
                 
-                <li> <a href=<%= user_show_url(user_id: user.id) %>><%=user.email[0..15]%></a></li>
+                <li> <a href=<%= user_show_url(user_id: user.id, current_id: current_user.id ) %>><%=user.email[0..15]%></a></li>
             <%end%>
         <%end%>
          
