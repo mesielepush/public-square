@@ -30,6 +30,7 @@
 #                          likes_update GET    /likes_update(.:format)                                                                  likes#update
 #                             user_show GET    /user_show(.:format)                                                                     users#show
 #                            post_index GET    /post_index(.:format)                                                                    posts#index
+#                         new_listening GET    /new_listening(.:format)                                                                 listener#new
 #         rails_mandrill_inbound_emails POST   /rails/action_mailbox/mandrill/inbound_emails(.:format)                                  action_mailbox/ingresses/mandrill/inbound_emails#create
 #         rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                  action_mailbox/ingresses/postmark/inbound_emails#create
 #            rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                     action_mailbox/ingresses/relay/inbound_emails#create
@@ -60,5 +61,6 @@ Rails.application.routes.draw do
   get '/likes_update', to: 'likes#update'
   get '/user_show', to: 'users#show'
   get '/post_index', to: 'posts#index'
+  get '/new_listening', to: 'listenings#new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

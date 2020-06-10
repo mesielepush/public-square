@@ -11,6 +11,7 @@
 #  remember_created_at    :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  background             :string           default("https://i.imgur.com/moRYtBi.png")
 #
 
 class User < ApplicationRecord
