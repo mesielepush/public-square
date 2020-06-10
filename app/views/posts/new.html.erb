@@ -1,0 +1,27 @@
+<div class="col d-flex justify-content-center align-items-center">
+    <div id='form_posts'>
+        <h3>
+            New Post
+        </h3>
+        <div class="container d-flex justify-content-center create_group sign_form">
+            <%= form_for(@post, url: post_new_url(@post)) do |f| %>
+                <h3 class='text-center'>New Post</h3>
+                <div class="field text-center">
+                    <%= f.label :avatar_url, 'Photo url' %><br/>
+                    <%= f.text_field :avatar, autofocus: true, :size => 50  %>
+                </div>
+                
+                <div class="field text-center" >
+                    <%= f.label :message %><br />
+                    <%= f.text_field :content, autofocus: true, :size => 50 %>
+                </div>
+
+                <%= f.hidden_field :counter, value: 0 %>
+                <%= f.hidden_field :user_id, value: current_user.id %>
+                
+                <%= submit_tag("Post", class: 'btn btn-secondary', style: "color:white") %>
+
+            <% end %>
+        </div>
+    </div>
+</div>

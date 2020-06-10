@@ -1,97 +1,114 @@
-<div class="d-flex flex-column gral_post">
-    <div class=" d-flex justify-content-start">
-        <span id='my_tweets_title'>
-        My gossips
-        </span> 
-    </div>
-    <div class="col d-flex justify-content-center align-items-center">
-        <div id='form_posts'>
-            <div class="container d-flex justify-content-center create_group sign_form">
-                <%= form_for(@post, url: post_new_url(@post)) do |f| %>
-                    <h3 class='text-center'>New Post</h3>
-                    <div class="field text-center">
-                        <%= f.label :avatar_url %><br />
-                        <%= f.text_field :avatar, autofocus: true %>
-                    </div>
-                    
-                    <div class="field text-center" >
-                        <%= f.label :message %><br />
-                        <%= f.text_field :content, autofocus: true, :size => 50 %>
-                    </div>
+<% if @user.id == current_user.id %>
 
-                    <%= f.hidden_field :counter, value: 0 %>
-                    <%= f.hidden_field :user_id, value: current_user.id %>
+    <div class="d-flex flex-column justify-content-center">
+        <div class=" d-flex container justify-content-center align-content-center text-center" id='my_tweets_background'>
+            <div class="card ">
+                <div class='photo_top_group_card'>
+                    <img class="card-img-top img-fluid profile_back" src=<%=current_user.background%> >
                     
-                    <%= f.submit 'Create', class: 'btn btn-secondary' %>
+                </div>
 
-                <% end %>
+                
+                <div class="card-block text-center center_card_groups_index">
+                    
+                    <img class= 'profile rounded-circle img-fluid' src=<%=current_user.avatar%> alt="">
+                    
+                    <h4 class="card-title mt-3 group_title_scroll"><%=current_user.email%></h4>
+                    <div class="meta meta_card_relative">
+                        <h6 class='meta_card_group_index profile_description text-left'>Some descriptions</h6>
+                        
+                    </div>
+                    <div class="card-text card-text_groups d-flex justify-content-between">
+                        <div class='d-flex' >
+                            <p class = 'profile_followers' style='margin-right:1rem'>
+                                0 Following
+                            </p>
+                            
+                            <p class = 'profile_followers'>
+                                0 Follower
+                            </p>
+                        </div>
+                        <div sytle='position:relative'>
+                            <a href=<%= new_post_url %>>
+                                <img  id = 'new_post_icon' class='img-fluid' src="https://i.imgur.com/hAWVdKd.png" alt="new post">
+                            </a>
+                        </div>
+                    </div>
+                        
+                </div>
             </div>
         </div>
-    </div>
-    <% current_user.posts.sort_by(&:created_at).reverse.each do |post| %>
-        <div class="cards_user container d-flex flex-column justify-content-center cards_post">
-            <div class="card align-content-center justify-content-center"  style="width: 40rem;position: relative;left:16rem!important;">
-                <img class="card-img-top photo_card" src=<%=post.avatar%> alt="Post Image">
-                <div class="card-body " id='show_cards_user'>
-                    <div class="post_creator d-flex justify-content-between">
-                        <img src=<%= User.find_by_id(post.user_id).avatar  %> alt="" class='img-fluid rounded-circle' style='width:40px;height:40px;box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);'>
-                        <p class = 'text-center user_email' style='color:#251429; font-weight:800;box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);'>
-                            <%= User.find_by_id(post.user_id).email %>
+        
+        <% current_user.posts.sort_by(&:created_at).reverse.each do |post| %>
+            <div class="cards_user container d-flex flex-column justify-content-center cards_post">
+                <div class="card align-content-center justify-content-center"  style="width: 40rem;position: relative;left:16rem!important;">
+                    <img class="card-img-top photo_card" src=<%=post.avatar%> alt="Post Image">
+                    <div class="card-body " id='show_cards_user'>
+                        <div class="post_creator d-flex justify-content-between">
+                            <img src=<%= User.find_by_id(post.user_id).avatar  %> alt="" class='img-fluid rounded-circle' style='width:40px;height:40px;box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);'>
+                            <p class = 'text-center user_email' style='color:#251429; font-weight:800;box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);'>
+                                <%= User.find_by_id(post.user_id).email %>
+                            </p>
+                            <a href=""><img src="https://i.imgur.com/AsE7LHx.png" alt="" style='height: 45px'></a>
+                        </div>
+                        <p class="card-text post_content"><%= post.content %></p>
+                        <p style='padding-bottom:2rem;color:#E2D8CA'>
+                            <%= time_ago_in_words(post.created_at) + ' ago' %> 
                         </p>
-                        <a href=""><img src="https://i.imgur.com/AsE7LHx.png" alt="" style='height: 45px'></a>
-                    </div>
-                    <p class="card-text post_content"><%= post.content %></p>
-                    <p style='padding-bottom:2rem;color:#E2D8CA'>
-                        <%= time_ago_in_words(post.created_at) + ' ago' %> 
-                    </p>
-                    <div class="likes_counter text-center d-flex justify-content-around">
-                        <% if current_user.likes.find_by_post_id(post.id) == nil %>
+                        <div class="likes_counter text-center d-flex justify-content-around">
+                            <% if current_user.likes.find_by_post_id(post.id) == nil %>
 
-                            <a href=<%=likes_update_url(post_id: post.id, vote: -1)%>>
-                                <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>
-                            </a>
-                            
-                            <span class="counter">
-                                <%=post.counter%>
-                            </span>
-                            <a href=<%=likes_update_url(post_id: post.id, vote: 1)%>>
-                                <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_up'>
-                            </a>
-                        
-                        <%else%>
-                            <% if current_user.likes.find_by_post_id(post.id).result == 1 %>
                                 <a href=<%=likes_update_url(post_id: post.id, vote: -1)%>>
                                     <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>
                                 </a>
-                                <span class="counter">
-                                    <%=post.counter%>
-                                </span>
-
-                                
-                                <img src="https://i.imgur.com/QSyr92p.png" alt="" id='likes_up'>
-                                
-
-                            <%else%>
-                                
-                                <img src="https://i.imgur.com/Y51wRgl.png" alt="" id='likes_down'>
                                 
                                 <span class="counter">
                                     <%=post.counter%>
                                 </span>
-
                                 <a href=<%=likes_update_url(post_id: post.id, vote: 1)%>>
                                     <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_up'>
                                 </a>
+                            
+                            <%else%>
+                                <% if current_user.likes.find_by_post_id(post.id).result == 1 %>
+                                    <a href=<%=likes_update_url(post_id: post.id, vote: -1)%>>
+                                        <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>
+                                    </a>
+                                    <span class="counter">
+                                        <%=post.counter%>
+                                    </span>
+
+                                    
+                                    <img src="https://i.imgur.com/QSyr92p.png" alt="" id='likes_up'>
+                                    
+
+                                <%else%>
+                                    
+                                    <img src="https://i.imgur.com/Y51wRgl.png" alt="" id='likes_down'>
+                                    
+                                    <span class="counter">
+                                        <%=post.counter%>
+                                    </span>
+
+                                    <a href=<%=likes_update_url(post_id: post.id, vote: 1)%>>
+                                        <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_up'>
+                                    </a>
+
+                                <%end%>
 
                             <%end%>
-
-                        <%end%>
-                        
+                            
+                        </div>
                     </div>
                 </div>
-            </div>
-        
-        </div>        
+            
+            </div>        
 
-    <%end%>
+        <%end%>
+        
+    </div>
+<% else %>
+
+<div>
+    sñlkfjañlskdj
 </div>

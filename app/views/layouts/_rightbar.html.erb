@@ -1,6 +1,6 @@
-<div class="right-pane p-3">
-    <h4 class='user_email'> who to follow</h4>
-    <ul class="follow-data left_list d-flex flex-column text-center justify-content-center">
+<div class="right-pane p-3" >
+    <h4 class='user_email text-center' style = 'margin-top:1rem;'> who to follow</h4>
+    <ul class="follow-data center_list d-flex flex-column text-center justify-content-center">
          
          <% if User.all.size < 20 %>
          
@@ -12,7 +12,7 @@
         
             <% User.all.take(20).each do |user| %>
                 
-                <li> <a href=""><%=user.email[0..15]%></a></li>
+                <li> <a href=<%= user_show_url(uder_id: user.id) %>><%=user.email[0..15]%></a></li>
             <%end%>
         <%end%>
          

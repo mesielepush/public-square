@@ -2,20 +2,28 @@
 <nav class="nav-bar d-flex justify-content-between align-content-center">
     <% if current_user != nil%>
         <ul>
-            
-            <li><a class="active" href= '' class='lef_nav_icons' style='height:5rem;color: rgb(47, 35, 58)'>...</a></li>
-            <li><a href="#news" class='lef_nav_icons'>...</a></li>
-            <li><a href="#contact" class='lef_nav_icons'>...</a></li>
-            
+        <div id='configuration'>
+            <img src="https://i.imgur.com/5AFZYhj.png" alt="" class='img-fluid conf'>
+        </div>
         </ul>
-            <%= inline_svg_tag "logo.svg", class: 'some-class',title: 'Some Title'%>
+
         <ul>
+            <%= inline_svg_tag "logo.svg", class: 'some-class', style: 'width:13rem',title: 'Some Title'%>
+        </ul>
+
+        <ul>
+        
+        <div id='png'>
+            <a href="">
+                <img src="https://i.imgur.com/nud1glK.png" alt="" class='img-fluid'>
+            </a>
             
-            <li><a class="active" href= '' class='lef_nav_icons' style='height:5rem;color: rgb(47, 35, 58)'>...</a></li>
-            <li><a href="#news" class='lef_nav_icons'>...</a></li>
-            <li><a href="#contact" class='lef_nav_icons'>...</a></li>
+        </div>
+        
+        
             
         </ul>
+
     <% else %>
         <ul>
             
@@ -24,7 +32,7 @@
             <li><a href="#contact" class='lef_nav_icons'>...</a></li>
             
         </ul>
-            <%= inline_svg_tag "logo.svg", class: 'some-class' %>
+            <%= inline_svg_tag "logo.svg", class: 'some-class' , style: 'display:none' %>
         <ul>
             
             <li><a class="active" href= '' class='lef_nav_icons' style='height:5rem;color: rgb(47, 35, 58)'>...</a></li>

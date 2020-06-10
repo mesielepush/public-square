@@ -26,7 +26,10 @@
 #                                       PUT    /posts/:id(.:format)                                                                     posts#update
 #                                       DELETE /posts/:id(.:format)                                                                     posts#destroy
 #                              post_new POST   /post_new(.:format)                                                                      posts#create
+#                             post_show GET    /post_show(.:format)                                                                     posts#show
 #                          likes_update GET    /likes_update(.:format)                                                                  likes#update
+#                             user_show GET    /user_show(.:format)                                                                     users#show
+#                            post_index GET    /post_index(.:format)                                                                    posts#index
 #         rails_mandrill_inbound_emails POST   /rails/action_mailbox/mandrill/inbound_emails(.:format)                                  action_mailbox/ingresses/mandrill/inbound_emails#create
 #         rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                  action_mailbox/ingresses/postmark/inbound_emails#create
 #            rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                     action_mailbox/ingresses/relay/inbound_emails#create

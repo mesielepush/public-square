@@ -7,7 +7,7 @@ $twitter-light-grey: #ccc;
 body {
     padding: 0;
     margin: 0;
-    background-color: rgb(226, 216, 202)
+    background-color: rgb(36, 14, 41)
 }
 
 .wrapper {
@@ -57,16 +57,19 @@ body {
     }
 }
 
-
+.logo{
+    padding-top: 0.7rem;
+    fill: green($color: #000000) !important;;
+}
 
 .nav-bar{
-    background-color: rgb(160, 111, 55);
+    background-color: #27152B;
     position: fixed;
     top:0;
     width: 100%;
     clear: both;
     z-index: 10000!important;
-    height: 5rem;
+    height: 7rem;
     ul {
         list-style-type: none;
         margin: 0;
@@ -121,14 +124,25 @@ body {
     width: 110%;
     height: 110%;
 }
+#configuration{
 
+    max-width: 4rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+#png{
+    max-width: 4rem;
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+.conf{
+    transform: scaleX(-1);
+}
 .some-class {
     display: block;
-    margin: 0 auto;
-    fill: #510d5a;
-    width: 5em;
-    margin-left: 2rem;;
-    margin-right: 2rem;;
+    margin-top: 1rem;
+    fill: #e4dcdc;
+    width: 5em;    
     height: 4.5em;
     
   }
@@ -210,11 +224,11 @@ body {
 }
 
 .counter{
-    font-size: 2.5rem;;
+    font-size: 2.5rem;
 }
 
 .sign_form{
-    background: rgba(126, 117, 117, 0.5);
+    background: rgba(209, 178, 149, 0.5);
     padding: 1rem;
     margin-bottom: 2rem;;;
 }
