@@ -2,7 +2,9 @@ class ListeningsController < ApplicationController
   def new
     @user = User.find_by_id(params[:current])
     if @user.listenings.new(other_id: params[:other_id]).save
+
       flash.now[:notice] = "You are slkjdhnfljks"
+      User.find_by_id(params[:other_id]).listeners.new(other_id:@user.id).save
       redirect_to user_show_url(user_id: params[:other_id])
     else
       flash.now[:notice] = "You are slkjdhnfljks"
@@ -14,5 +16,5 @@ class ListeningsController < ApplicationController
   end
   def vote_params
     params.require(:other_id, :current)
-end
+  end
 end

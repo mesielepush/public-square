@@ -1,0 +1,18 @@
+<div class="container d-flex justify-content-md-center">
+    <% for user in @followers%>
+        <a href=<%= user_show_url(user_id: user.other_id, current_id: current_user.id ) %>>
+            <div class='follow d-flex justify-content-sm-between align-content-center'>
+                <div class="">
+                    <img class = 'images_followers img-fluid rounded-circle' src=<%= User.find_by_id(user.other_id).avatar%> alt="">
+                </div>
+                
+                
+                    <div class="profile_follow">
+                        <span>
+                            <%= User.find_by_id(user.other_id).email%>
+                        </span>
+                    </div>
+            </div>
+        </a>
+    <% end %>
+</div>

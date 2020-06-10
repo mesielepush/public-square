@@ -29,8 +29,8 @@
                                 
                                 <p class = 'profile_followers'>
                                     <span style = 'font-weight:bold'>
-                                        <%= current_user.listenings.count %>
-                                    </span> Follower
+                                        <%= current_user.listeners.count %>
+                                    </span>  <a href=<%= show_followers_url(user_id: current_user.id) %>> Followers</a>
                                 </p>
                             </div>
                             <div sytle='position:relative'>
@@ -132,23 +132,33 @@
                     
                     <h4 class="card-title mt-3 group_title_scroll"><%=@user.email%></h4>
                     <div class="meta meta_card_relative">
-                        <h6 class='meta_card_group_index profile_description text-left'>Some descriptions</h6>
+                        <h6 class='meta_card_group_index profile_description text-left'><%= @user.description %></h6>
                         
                     </div>
                     <div class="card-text card-text_groups d-flex justify-content-between">
                         <div class='d-flex' >
                             <p class = 'profile_followers' style='margin-right:1rem'>
-                                0 Following
+                                <span style = 'font-weight:bold'>
+                                    <%= @user.listenings.count %>
+                                </span>  Following
                             </p>
                             
                             <p class = 'profile_followers'>
-                                0 Follower
+                                <span style = 'font-weight:bold'>
+                                    <%= @user.listeners.count %>
+                                </span>  <a href=<%= show_followers_url(user_id: @user.id) %> stule> Followers</a>
                             </p>
                         </div>
                         <div sytle='position:relative'>
-                            <a href=<%= new_listening_url(other_id: @user.id, current: current_user.id) %>>
-                                <img  id = 'new_post_icon' class='img-fluid' src="https://i.imgur.com/FSLQPBS.png" alt="Follow">
-                            </a>
+                            <% if current_user.listenings.where(other_id: @user.id) %>
+                                
+                                <img  id = 'new_post_icon' class='img-fluid' src="https://i.imgur.com/f2EwRe2.png" alt="Follow">
+                                
+                            <% else %>
+                                <a href=<%= new_listening_url(other_id: @user.id, current: current_user.id) %>>
+                                    <img  id = 'new_post_icon' class='img-fluid' src="https://i.imgur.com/FSLQPBS.png" alt="Follow">
+                                </a>
+                            <% end %>
                         </div>
                     </div>
                         
