@@ -1,3 +1,61 @@
+<% if @user == nil %>
+    <section class="left_bar" style = 'position:absolute'>
+
+        <div class="d-flex flex-column " >
+            <div class="profile_left_bar d-flex justify-content-around mt-5" >
+                <img class= 'left_bar_photo img-fluid rounded-circle' src=<%= current_user.avatar %> alt="">
+                <h4 class='asd mt-2'> <%= current_user.email%> </h4>
+            </div>
+            <div class="profile_left_bar d-flex mt-5" >
+                <div class="followers_left d-flex flex-column align-content-center">
+                    <span class="numbers">185</span>
+                    <span>Following</span>
+                </div>
+                <div class="followers_left d-flex flex-column">
+                    <span class="numbers">12</span>
+                    <span>Followers</span>
+                </div>
+
+                
+            </div>
+            
+            <ul class='re'> 
+                <li><a href="#"><%= link_to 'all gossips', post_index_url, method: :get%></a></li>
+                <li><a href=<%=root_url%>><%= link_to 'my gossips', root_url, method: :get%></a></li>
+                <li><a href="#"><%= link_to 'listeners', ''%></a></li>
+                <li><a href="#"><%= link_to 'listening', ''%></a></li>
+
+                <li><a href="#"><%= link_to 'sign out', destroy_user_session_path, method: :delete%></a></li>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">ipsum</a></li>
+                
+            </ul>
+        </div>
+    </section>
+<% else %>
+    <section class="left_bar" style = 'position:absolute'>
+
+        <div class="d-flex flex-column " >
+            <div class="profile_left_bar d-flex justify-content-around mt-5" >
+                <img class= 'left_bar_photo img-fluid rounded-circle' src='' alt="">
+                <h4 class='asd'> 'popo' </h4>
+            </div>
+            
+            
+            <ul class='re'> 
+                <li><a href="#"><%= link_to 'all gossips', post_index_url, method: :get%></a></li>
+                <li><a href=<%=root_url%>><%= link_to 'my gossips', root_url, method: :get%></a></li>
+                <li><a href="#"><%= link_to 'listeners', ''%></a></li>
+                <li><a href="#"><%= link_to 'listening', ''%></a></li>
+
+                <li><a href="#"><%= link_to 'sign out', destroy_user_session_path, method: :delete%></a></li>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">ipsum</a></li>
+                
+            </ul>
+        </div>
+    </section>
+<% end%>
 
 <nav class="nav-bar d-flex justify-content-between align-content-center">
     <% if current_user != nil%>
@@ -27,17 +85,12 @@
     <% else %>
         <ul>
             
-            <li><a class="active" href= '' class='lef_nav_icons' style='height:5rem;color: rgb(47, 35, 58)'>...</a></li>
-            <li><a href="#news" class='lef_nav_icons'>...</a></li>
-            <li><a href="#contact" class='lef_nav_icons'>...</a></li>
             
         </ul>
-            <%= inline_svg_tag "logo.svg", class: 'some-class' , style: 'display:none' %>
+            <%= inline_svg_tag "logo.svg", class: 'some-class', style: 'width:25rem',title: 'Some Title'%>
         <ul>
             
-            <li><a class="active" href= '' class='lef_nav_icons' style='height:5rem;color: rgb(47, 35, 58)'>...</a></li>
-            <li><a href="#news" class='lef_nav_icons'>...</a></li>
-            <li><a href="#contact" class='lef_nav_icons'>...</a></li>
+            
             
         </ul>
     <%end%>

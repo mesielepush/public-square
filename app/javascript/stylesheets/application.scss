@@ -7,60 +7,31 @@ $twitter-light-grey: #ccc;
 body {
     padding: 0;
     margin: 0;
-    background-color: white
+    background-color: white;
+    
+}
+.left_bar{
+    
+    background-color: $twitter-dark;
+    top:0;
+    z-index: 10001!important;
+    height: 200rem;
+    width: 17rem;
+    .asd{
+        color:white;
+    }
+    .left_bar_photo{
+        height: 50px;
+        width: 50px;
+    }
+    .followers_left{
+        color: white;
+        border: 1px solid white;
+        width: 100%;
+    }
+
 }
 
-.wrapper {
-    .float {
-        float: left;
-        width: 30%;
-    }
-    .sidebar {
-        position: fixed;
-        width: 14rem;
-        height: 100%;
-        top:5rem;
-        left:0;
-        background-color: #213346;
-        padding: 1rem;
-        padding-top: 2rem;
-        span {
-            background-color: $twitter-dark;
-            color: #bdb8d7;
-        }
-        h2 {
-            color: #E1E8ED;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        ul {
-            padding-left: none;
-            li {
-                list-style-type: none;
-                padding: 15px;
-                border-bottom: 1px solid rgba($color: #000000, $alpha: 0.05);
-                border-top: 1px solid rgba(225, 225, 225, 0.05);
-                a {
-                    color: #bdb8d7;
-                    text-transform: uppercase;
-                    text-decoration: none;
-                    box-shadow: -1px 11px 31px 0px rgba(0,0,0,0.75);
-                    display: block;
-                    text-align: center;
-                }
-                a:hover{
-                    background: rgb(39, 40, 43);
-                    ;
-                }
-            }
-        }
-    }
-}
-
-.logo{
-    padding-top: 0.7rem;
-    fill: green($color: #000000) !important;;
-}
 
 .nav-bar{
     background-color: #1A91DA;
@@ -68,32 +39,9 @@ body {
     top:0;
     width: 100%;
     clear: both;
-    z-index: 10000!important;
+    z-index: 100!important;
     height: 7rem;
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        
-        text-align: right;
-        li {
-            float: right;
-            display: flex;
-            a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                background:#F7C099;
-                box-shadow: -1px 11px 31px 0px rgba(0,0,0,0.75);
-            }
-            a:hover {
-                background-color: rgb(211, 112, 112)!important;
-            }
-        }
-    }
+    
 }
 .lef_nav_icons{
     display: block;
@@ -109,14 +57,9 @@ body {
 .lef_nav_icons:hover {
     background-color: rgb(211, 112, 112)!important;
 }
-.log_in{
-    color: black;
-    background-image: url('https://bit.ly/3bFjgMz');
-    background-position: center; /* Center the image */
-    margin-top: 10rem;
-}
+
 .form_init{
-    background-color: rgba(248, 247, 216, 0.2);
+    background-color: rgba(248, 247, 216, 0.0);
     position: relative;
     top: 5rem;;
     padding-top: 5rem;;
@@ -124,6 +67,7 @@ body {
     width: 110%;
     height: 110%;
 }
+
 #configuration{
 
     max-width: 4rem;
@@ -202,10 +146,7 @@ body {
     color: white;
     font-size: 1.5rem;;
 }
-.left_list{
-    position: relative;
-    left:-2rem;
-}
+
 .photo_card{
     max-width: 100%;
     max-height: 100%;;
