@@ -22,16 +22,16 @@ body {
         font-size: 1.5rem;
     }
     .left_bar_photo{
-        height: 60px;
-        width: 60px;
+        height: 75px;
+        width: 75px;
     }
     .profile_left_bar{
-        height: 5rem;;
+        height: 8.6rem;;
         border: 2px solid #202c3d
     }
     .inner_profile_left_bar{
         position: relative;
-        top:0.8rem;
+        top:2.5rem;
     }
     .followers_count{
         position: relative;
@@ -60,6 +60,7 @@ body {
 
         position: relative;
         left:-2rem;
+        top:1rem;
         li{
             position: relative;
             display: flex;
@@ -96,6 +97,11 @@ body {
     height: 9rem;
     
 }
+#config_nav{
+    margin-top: 2.5rem;
+    max-width: 4rem;
+    margin-right: 2rem;
+}
 .lef_nav_icons{
     display: block;
     color: #213346!important;
@@ -127,54 +133,63 @@ body {
     margin-top: 1rem;
     margin-left: 2rem;
 }
-#png{
-    max-width: 4rem;
-    margin-top: 1rem;
-    margin-right: 2rem;
-}
+
 .conf{
     transform: scaleX(-1);
 }
 .some-class {
-    display: block;
-    margin-top: 1rem;
-    fill: #e4dcdc;
-    width: 5em;    
-    height: 4.5em;
+    height: 20rem!important;
+    width:20rem!important;
+    position: relative;
+    top: 1.7rem;
+    left: 17rem; 
+    fill: #ffffff;
+    
     
   }
 
 .right-pane {
     float: right;
     position: fixed;
-    top:3rem;
+    top:6rem;
     right:0;
-    background-color: $twitter-dark;
+    background-color: white;
     height: 100%;
-    color: white;
-    width: 14.7rem;
+    width: 15rem;
+    border-left:1px solid rgba(133, 144, 175, 0.5);
     z-index: 2!important;
     padding-top: 3rem!important;
     overflow-y: scroll;
     ul{
-        float: right;
+        position: relative;
+        right:1rem;
         li{
             list-style-type: none;
+
             a {
-                color: #bdb8d7;
+                color: #61768a;
                 text-decoration: none!important;
-                box-shadow: -1px 11px 31px 0px rgba(0,0,0,0.75);
-                display: block;
+                display: flex;
                 text-align: center;
                 font-size: 1rem;
                 padding: 1rem;
+                padding-bottom: 1rem;
+                width: 13rem;;
+                height: 4rem;;
+                img{
+                    position: relative;
+                    right: 1rem;;
+                    width: 30px;
+                    height: 30px;
+                }
                 
             }
             a:hover{
                 text-decoration: none!important;
-                background: rgb(39, 40, 43);
-                box-shadow: 2px 25px 109px 55px rgba(0,0,0,0.75);
+                background: rgb(255, 255, 255);
+                box-shadow: 2px 2px 2px 0px rgba(190, 182, 182, 0.4);
             }
+
         }
     }
     
@@ -196,8 +211,14 @@ body {
     top:0;
 }
 .user_email{
-    color: white;
+    color: #677D92;
+    height: 5rem;;
+    
     font-size: 1.5rem;;
+    span{
+        position: relative;
+        top:1.5rem;
+    }
 }
 
 .photo_card{
