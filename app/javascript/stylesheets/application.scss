@@ -12,35 +12,88 @@ body {
 }
 .left_bar{
     
-    background-color: $twitter-dark;
+    background-color:#1B2A3D;
     top:0;
     z-index: 10001!important;
     height: 200rem;
     width: 17rem;
     .asd{
-        color:white;
+        color:#677D92;
+        font-size: 1.5rem;
     }
     .left_bar_photo{
-        height: 50px;
-        width: 50px;
+        height: 60px;
+        width: 60px;
+    }
+    .profile_left_bar{
+        height: 5rem;;
+        border: 2px solid #202c3d
+    }
+    .inner_profile_left_bar{
+        position: relative;
+        top:0.8rem;
+    }
+    .followers_count{
+        position: relative;
+        
     }
     .followers_left{
-        color: white;
-        border: 1px solid white;
+        color: #677D92;
+        border: 2px solid #131f30;
         width: 100%;
+
+        .numbers{
+            position: relative;
+            font-size: 1.4rem;;
+            font-weight: 800;
+            top: 0.2rem;
+            color:#A5B1BD;
+        }
+        .followers_span{
+            position: relative;
+            bottom: 0.3rem;
+            font-size: 1rem;
+            color:#677D92;
+        }
+    }
+    .left_bar_list{
+
+        position: relative;
+        left:-2rem;
+        li{
+            position: relative;
+            display: flex;
+            justify-content: left;;
+            height: 5rem;
+            background-color: red($color: #cec3c3)!important;
+            color:#677D92;
+            svg{
+               position: relative;
+               fill:#677D92;
+               top:1.5rem;
+               left:1.2rem;
+            }
+            span{
+                position:relative;
+                font-size: 1.2rem;
+                font-weight: bold;
+                top:1.5rem;
+                left: 2rem
+            }
+        }
     }
 
 }
 
 
 .nav-bar{
-    background-color: #1A91DA;
+    background-color: #52A6E6;
     position: fixed;
     top:0;
     width: 100%;
     clear: both;
     z-index: 100!important;
-    height: 7rem;
+    height: 9rem;
     
 }
 .lef_nav_icons{
@@ -150,9 +203,6 @@ body {
 .photo_card{
     max-width: 100%;
     max-height: 100%;;
-}
-.cards_post{
-    margin-bottom: 1rem;;
 }
 
 .post_creator{

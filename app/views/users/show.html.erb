@@ -1,5 +1,5 @@
 <% if @user == nil %>
-    <div style = 'margin-top:6rem'>
+    <div style = 'margin-top:8.5rem'>
     
         <div class="d-flex flex-column justify-content-center">
             <div class=" d-flex container justify-content-center align-content-center text-center" id='my_tweets_background'>
@@ -45,8 +45,8 @@
             </div>
             
             <% current_user.posts.sort_by(&:created_at).reverse.each do |post| %>
-                <div class="cards_user container d-flex flex-column justify-content-center cards_post">
-                    <div class="card align-content-center justify-content-center"  style="width: 40rem;position: relative;left:16rem!important;">
+                <div class="container d-flex flex-column justify-content-center cards_post">
+                    <div class="card align-content-center justify-content-center"  style="width: 40rem;position: relative;left:15rem!important;">
                         <img class="card-img-top photo_card" src=<%=post.avatar%> alt="Post Image">
                         <div class="card-body " id='show_cards_user'>
                             <div class="post_creator d-flex justify-content-between">
@@ -115,7 +115,7 @@
     </div>
 <% else %>
 
-<div class='container' style = 'margin-top:6rem'>
+<div class='container' style = 'margin-top:8.5rem'>
     
     <div class="d-flex flex-column justify-content-center">
         <div class=" d-flex container justify-content-center align-content-center text-center" id='my_tweets_background'>

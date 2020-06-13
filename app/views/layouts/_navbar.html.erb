@@ -1,33 +1,51 @@
 <% if @user == nil %>
-    <section class="left_bar" style = 'position:absolute'>
+    <section class="left_bar" style = 'position:fixed'>
 
         <div class="d-flex flex-column " >
-            <div class="profile_left_bar d-flex justify-content-around mt-5" >
-                <img class= 'left_bar_photo img-fluid rounded-circle' src=<%= current_user.avatar %> alt="">
-                <h4 class='asd mt-2'> <%= current_user.email%> </h4>
-            </div>
-            <div class="profile_left_bar d-flex mt-5" >
-                <div class="followers_left d-flex flex-column align-content-center">
-                    <span class="numbers">185</span>
-                    <span>Following</span>
+            <div class="profile_left_bar  mt-1" >
+                <div class="inner_profile_left_bar d-flex justify-content-around">
+                    <img class= 'left_bar_photo img-fluid' src=<%= current_user.avatar %> alt="">
+                    <h4 class='asd mt-2'> <%= current_user.email.split('@').first+'@' %> </h4>
                 </div>
-                <div class="followers_left d-flex flex-column">
+                
+            </div>
+            <div class="followers_count d-flex" >
+                <div class="followers_left d-flex flex-column align-content-center text-center">
+                    <span class="numbers">185</span>
+                    <span class = 'followers_span'>Following</span>
+                </div>
+                <div class="followers_left d-flex flex-column text-center">
                     <span class="numbers">12</span>
-                    <span>Followers</span>
+                    <span class = 'followers_span'>Followers</span>
                 </div>
 
                 
             </div>
             
-            <ul class='re'> 
-                <li><a href="#"><%= link_to 'all gossips', post_index_url, method: :get%></a></li>
-                <li><a href=<%=root_url%>><%= link_to 'my gossips', root_url, method: :get%></a></li>
-                <li><a href="#"><%= link_to 'listeners', ''%></a></li>
-                <li><a href="#"><%= link_to 'listening', ''%></a></li>
-
-                <li><a href="#"><%= link_to 'sign out', destroy_user_session_path, method: :delete%></a></li>
-                <li><a href="#">lorem</a></li>
-                <li><a href="#">ipsum</a></li>
+            <ul class='left_bar_list text-center'> 
+                <li class=' align-content-center'>
+                    <svg height="30px" width="30px">
+                        <path d="M22.58 7.35L12.475 1.897c-.297-.16-.654-.16-.95 0L1.425 7.35c-.486.264-.667.87-.405 1.356.18.335.525.525.88.525.16 0 .324-.038.475-.12l.734-.396 1.59 11.25c.216 1.214 1.31 2.062 2.66 2.062h9.282c1.35 0 2.444-.848 2.662-2.088l1.588-11.225.737.398c.485.263 1.092.082 1.354-.404.263-.486.08-1.093-.404-1.355zM12 15.435c-1.795 0-3.25-1.455-3.25-3.25s1.455-3.25 3.25-3.25 3.25 1.455 3.25 3.25-1.455 3.25-3.25 3.25z"></path>
+                    </svg>
+                    <span>HOME</span>
+                </li>
+                    
+                <li>
+                    <svg height="30px" width="30px" viewBox="0 0 512.00533 512" >
+                        <path d="m320 277.335938c-11.796875 0-21.332031 9.558593-21.332031 21.332031v85.335937c0 11.753906-9.558594 21.332032-21.335938 21.332032h-64v-320c0-18.21875-11.605469-34.496094-29.054687-40.554688l-6.316406-2.113281h99.371093c11.777344 0 21.335938 9.578125 21.335938 21.335937v64c0 11.773438 9.535156 21.332032 21.332031 21.332032s21.332031-9.558594 21.332031-21.332032v-64c0-35.285156-28.714843-63.99999975-64-63.99999975h-229.332031c-.8125 0-1.492188.36328175-2.28125.46874975-1.027344-.085937-2.007812-.46874975-3.050781-.46874975-23.53125 0-42.667969 19.13281275-42.667969 42.66406275v384c0 18.21875 11.605469 34.496093 29.054688 40.554687l128.386718 42.796875c4.351563 1.34375 8.679688 1.984375 13.226563 1.984375 23.53125 0 42.664062-19.136718 42.664062-42.667968v-21.332032h64c35.285157 0 64-28.714844 64-64v-85.335937c0-11.773438-9.535156-21.332031-21.332031-21.332031zm0 0"/><path d="m505.75 198.253906-85.335938-85.332031c-6.097656-6.101563-15.273437-7.9375-23.25-4.632813-7.957031 3.308594-13.164062 11.09375-13.164062 19.714844v64h-85.332031c-11.777344 0-21.335938 9.554688-21.335938 21.332032 0 11.777343 9.558594 21.332031 21.335938 21.332031h85.332031v64c0 8.621093 5.207031 16.40625 13.164062 19.714843 7.976563 3.304688 17.152344 1.46875 23.25-4.628906l85.335938-85.335937c8.339844-8.339844 8.339844-21.824219 0-30.164063zm0 0"/>
+                    </svg>
+                    <span>LOGOUT</span>
+                
+                </li>
+                <li>
+                    <svg height="30px" width="30px"  >
+                        <path d="m393.36 334.66c-26.422 0-52.849 10.027-72.935 30.113-40.172 40.171-40.218 105.74-0.046 145.91 35.217 35.216 89.911 39.558 129.94 13.03l60.918 60.916c8.0386 8.0384 20.97 8.0384 29.008 0 8.0387-8.0384 8.0387-20.969 0-29.008l-60.872-60.916c26.497-40.023 22.127-94.732-13.077-129.94-20.086-20.085-46.514-30.113-72.935-30.113zm-0.046 27.166c19.371 0.009 38.738 7.4275 53.596 22.285 29.716 29.715 29.762 77.521 0.046 107.24-29.716 29.715-77.523 29.715-107.24 0-29.716-29.715-29.716-77.52 0-107.24 14.858-14.858 34.225-22.295 53.596-22.285zm-54.656 99.224a2.9472 2.9471 0 0 0 -2.5325 4.236c10.265 21.49 32.226 36.328 57.602 36.328 5.5064 0 10.842-0.71645 15.932-2.0259a2.9472 2.9471 0 0 0 -0.0921 -5.7094c-25.496-5.6948-48.907-16.882-68.975-32.231a2.9472 2.9471 0 0 0 -1.9339 -0.59857z"/>
+                    </svg>
+                    <span>
+                        SEARCH
+                    </span>
+                 </li>
+                 
                 
             </ul>
         </div>
@@ -66,7 +84,7 @@
         </ul>
 
         <ul>
-            <%= inline_svg_tag "logo.svg", class: 'some-class', style: 'width:13rem',title: 'Some Title'%>
+            <%= inline_svg_tag "logo.svg", class: 'some-class', style: 'width:15rem; position:relative;top:1.3rem;',title: 'Some Title'%>
         </ul>
 
         <ul>
