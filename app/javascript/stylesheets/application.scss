@@ -61,27 +61,44 @@ body {
         position: relative;
         left:-2rem;
         top:1rem;
-        li{
-            position: relative;
-            display: flex;
-            justify-content: left;;
-            height: 5rem;
-            background-color: red($color: #cec3c3)!important;
-            color:#677D92;
-            svg{
-               position: relative;
-               fill:#677D92;
-               top:1.5rem;
-               left:1.2rem;
-            }
-            span{
-                position:relative;
-                font-size: 1.2rem;
-                font-weight: bold;
-                top:1.5rem;
-                left: 2rem
+        a{
+            li{
+                position: relative;
+                display: flex;
+                justify-content: left;;
+                height: 5rem;
+                background-color: red($color: #cec3c3)!important;
+                color:#677D92;
+                svg{
+                   position: relative;
+                   fill:#677D92;
+                   top:1.5rem;
+                   left:1.2rem;
+                }
+                span{
+                    position:relative;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    top:1.5rem;
+                    left: 2rem
+                }
             }
         }
+        a:hover{
+            text-decoration: none!important;
+            li{
+                width: 16.5rem;
+                color:white;
+                background-color: #52A6E6!important;
+                svg{
+                    fill:white;
+                }
+            }
+            
+            
+            
+        }
+        
     }
 
 }
@@ -149,11 +166,11 @@ body {
   }
 
 .right-pane {
-    float: right;
+    
     position: fixed;
     top:6rem;
     right:0;
-    background-color: white;
+    background-color: #1B2A3D;
     height: 100%;
     width: 15rem;
     border-left:1px solid rgba(133, 144, 175, 0.5);
@@ -168,26 +185,36 @@ body {
 
             a {
                 color: #61768a;
+                position:relative;
+                left:-2.7rem;
                 text-decoration: none!important;
                 display: flex;
                 text-align: center;
                 font-size: 1rem;
                 padding: 1rem;
                 padding-bottom: 1rem;
-                width: 13rem;;
+                width: 15.5rem;
                 height: 4rem;;
                 img{
                     position: relative;
-                    right: 1rem;;
+                    left: 1rem;;
                     width: 30px;
                     height: 30px;
+                }
+                span{
+                    font-weight: 700;
+                    position: relative;
+                    left:2.2rem;
+                    
                 }
                 
             }
             a:hover{
+                
                 text-decoration: none!important;
-                background: rgb(255, 255, 255);
-                box-shadow: 2px 2px 2px 0px rgba(190, 182, 182, 0.4);
+                background: #52A6E6;
+                color:white;
+                
             }
 
         }
@@ -210,7 +237,7 @@ body {
     position: fixed;
     top:0;
 }
-.user_email{
+.user_email_right{
     color: #677D92;
     height: 5rem;;
     
@@ -218,26 +245,12 @@ body {
     span{
         position: relative;
         top:1.5rem;
+        left:0.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 5px solid #132236;
     }
 }
 
-.photo_card{
-    max-width: 100%;
-    max-height: 100%;;
-}
-
-.post_creator{
-    padding: 1rem;
-    background: rgb(224, 221, 221);
-    height: 4rem;;
-}
-.post_content{
-    margin-top: 2rem;;
-}
-
-.counter{
-    font-size: 2.5rem;
-}
 
 .sign_form{
     background: rgba(209, 178, 149, 0.5);
@@ -254,35 +267,5 @@ body {
     position: relative;
     
 }
-#show_cards_user{
-    position: relative;
-    color:white;
-    background: #27152B;
-    width: 40rem;;
-}
-#show_cards_user1{
-    position: relative;
-    color:white;
-    background: #27152B;
-    width: 35rem;;
-}
-.likes_counter{
-    position: relative;
-    height: 5rem;
-    padding:1rem;
-    background:#E2D8CA;
-    color: black;
-    border: rgba(182, 179, 179,0.5) 4px solid
-}
-#likes_up, #likes_down{
-    width: 50px;
-    height: 50px;
-}
-.likes_counter1{
-    position: relative;
-    height: 5rem;
-    padding:1rem;
-    background:#E2D8CA;
-    color: black;
-    border: rgba(182, 179, 179,0.5) 4px solid
-}
+
+

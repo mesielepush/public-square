@@ -1,6 +1,6 @@
 <div class="right-pane p-3" >
-    <h4 class='user_email text-center' > <span>who to follow</span> </h4>
-    <ul class="follow-data center_list d-flex flex-column text-center justify-content-around">
+    <h4 class='user_email_right text-center' > <span>who to follow</span> </h4>
+    <ul class="follow-data d-flex flex-column text-center justify-content-around">
         
         <% ids = User.pluck(:id).shuffle[0..5] %>
         <% User.where(id: ids).each do |user| %>

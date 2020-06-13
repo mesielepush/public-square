@@ -1,14 +1,15 @@
 <% if @user == nil %>
-    <div style = 'margin-top:8.5rem'>
+    
+    <div style = 'margin-top:8.5rem; margin-bottom: 5rem'>
     
         <div class="d-flex flex-column justify-content-center">
-            <div class=" d-flex container justify-content-center align-content-center text-center" id='my_tweets_background'>
+
+            <div class=" d-flex container justify-content-center align-content-center text-center mb-5">
                 <div class="card ">
+                    
                     <div class='photo_top_group_card'>
                         <img class="card-img-top img-fluid profile_back" src=<%=current_user.background%> >
-                        
                     </div>
-
                     
                     <div class="card-block text-center center_card_groups_index">
                         
@@ -41,78 +42,112 @@
                         </div>
                             
                     </div>
+
                 </div>
+            </div>
+            <div class="post_line container text-center mb-5 mt-2">
+                <p style = 'font-weight:bold;font-size:3rem;border-bottom:3px solid rgba(0,0,0,0.3)'>
+                    
+                </p>
             </div>
             
             <% current_user.posts.sort_by(&:created_at).reverse.each do |post| %>
                 <div class="container d-flex flex-column justify-content-center cards_post">
-                    <div class="card align-content-center justify-content-center"  style="width: 40rem;position: relative;left:15rem!important;">
-                        <img class="card-img-top photo_card" src=<%=post.avatar%> alt="Post Image">
+                    <div class="card cards_general align-content-center justify-content-center">
+                        
+                        <div style = 'position:relative'>
+                            <img class="photo_card" src=<%=post.avatar%> alt="Post Image">
+                            <img src=<%= User.find_by_id(post.user_id).avatar  %> alt="" class='img-fluid rounded-circle avatar_post'>
+                        </div>
+                        
                         <div class="card-body " id='show_cards_user'>
-                            <div class="post_creator d-flex justify-content-between">
-                                <img src=<%= User.find_by_id(post.user_id).avatar  %> alt="" class='img-fluid rounded-circle' style='width:40px;height:40px;box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);'>
-                                <p class = 'text-center user_email' style='color:#251429; font-weight:800;box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);'>
-                                    <%= User.find_by_id(post.user_id).email %>
-                                </p>
-                                <a href=""><img src="https://i.imgur.com/AsE7LHx.png" alt="" style='height: 45px'></a>
-                            </div>
-                            <p class="card-text post_content"><%= post.content %></p>
-                            <p style='padding-bottom:2rem;color:#E2D8CA'>
+                            
+                            <p class="card-text post_content">
+                                <%= post.content %>
+                            </p>
+                            
+                            <p style='padding-bottom:2rem;font-weight: 800;'>
                                 <%= time_ago_in_words(post.created_at) + ' ago' %> 
                             </p>
-                            <div class="likes_counter text-center d-flex justify-content-around">
-                                <% if current_user.likes.find_by_post_id(post.id) == nil %>
 
-                                    <a href=<%=likes_update_url(post_id: post.id, vote: -1)%>>
-                                        <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>
-                                    </a>
-                                    
-                                    <span class="counter">
-                                        <%=post.counter%>
-                                    </span>
-                                    <a href=<%=likes_update_url(post_id: post.id, vote: 1)%>>
-                                        <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_up'>
-                                    </a>
+                            <div class="post_creator d-flex justify-content-between">
                                 
-                                <%else%>
-                                    <% if current_user.likes.find_by_post_id(post.id).result == 1 %>
+                                <p class = 'text-center user_email_post' >
+                                    <%= User.find_by_id(post.user_id).email %>
+                                </p>
+                                <div class="votes_post d-flex justify-content-around">
+                                    <% if current_user.likes.find_by_post_id(post.id) == nil %>
                                         <a href=<%=likes_update_url(post_id: post.id, vote: -1)%>>
                                             <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>
                                         </a>
-                                        <span class="counter">
-                                            <%=post.counter%>
-                                        </span>
-
                                         
-                                        <img src="https://i.imgur.com/QSyr92p.png" alt="" id='likes_up'>
-                                        
-
-                                    <%else%>
-                                        
-                                        <img src="https://i.imgur.com/Y51wRgl.png" alt="" id='likes_down'>
-                                        
-                                        <span class="counter">
-                                            <%=post.counter%>
-                                        </span>
+                                            <% if post.counter >0 %>
+                                                <span class="counter" style = 'color:#FE4400'>
+                                                    <%=post.counter%>
+                                                </span>
+                                            <% else %>
+                                                <span class="counter" style = 'color:#9090F8'>
+                                                    <%=post.counter%>
+                                                </span>
+                                            <%end%>
 
                                         <a href=<%=likes_update_url(post_id: post.id, vote: 1)%>>
                                             <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_up'>
                                         </a>
+                                    <%else%>
+                                        <% if current_user.likes.find_by_post_id(post.id).result == 1 %>
 
+                                            <a href=<%=likes_update_url(post_id: post.id, vote: -1)%>>
+                                                <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>
+                                            </a>
+                                            
+                                                <% if post.counter >0 %>
+                                                    <span class="counter" style = 'color:#FE4400'>
+                                                        <%=post.counter%>
+                                                    </span>
+                                                <% else %>
+                                                    <span class="counter" style = 'color:#9090F8'>
+                                                        <%=post.counter%>
+                                                    </span>
+                                                <%end%>
+
+                                            
+                                            <img src="https://i.imgur.com/QSyr92p.png" alt="" id='likes_up'>
+
+                                        <%else%>
+                                        
+                                            <img src="https://i.imgur.com/Y51wRgl.png" alt="" id='likes_down'>
+                                            
+                                                <% if post.counter >0 %>
+                                                    <span class="counter" style = 'color:#FE4400'>
+                                                        <%=post.counter%>
+                                                    </span>
+                                                <% else %>
+                                                    <span class="counter" style = 'color:#9090F8'>
+                                                        <%=post.counter%>
+                                                    </span>
+                                                <%end%>
+
+                                            <a href=<%=likes_update_url(post_id: post.id, vote: 1)%>>
+                                                <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_up'>
+                                            </a>
+
+                                        <%end%>
                                     <%end%>
+                                </div>
 
-                                <%end%>
-                                
                             </div>
+                                                           
                         </div>
-                    </div>
-                
-                </div>        
 
+                    </div>
+                </div>
             <%end%>
             
         </div>
+
     </div>
+
 <% else %>
 
 <div class='container' style = 'margin-top:8.5rem'>

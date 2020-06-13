@@ -7,12 +7,6 @@
     padding: 1rem;
     margin-bottom: 2rem;;;
 }
-#my_tweets_background{
-    border:none;
-    margin-bottom: 5rem;
-    color: #27152b;
-    position: relative;
-}
 .profile_back{
     height: 20rem!important;
     width: 45rem!important;
@@ -43,38 +37,69 @@
     bottom: 1rem;
 }
 
-.follow-data{
-    position: relative;
-    
-}
 #show_cards_user{
     position: relative;
+    color:rgb(0, 0, 0);
+    background: #ffffff;
+    width: 45rem;
+    text-align:justify;
+    border:2px solid rgba(223, 219, 219,0.5)
     
-    width: 40rem;;
 }
-#show_cards_user1{
-    position: relative;
-    color:white;
-    background: #27152B;
-    width: 35rem;;
+.post_content{
+    margin-top: 1.5rem;
+    font-weight: 500;
 }
-.likes_counter{
+.post_creator{
+    background: rgb(255, 255, 255);
+    height: 2rem;
     position: relative;
-    padding:1rem ;
-    border: rgba(182, 179, 179,0.5) 4px solid
+    top:-1.5rem;
+}
+.avatar_post{
+    position:absolute;
+    bottom:-2rem;
+    right:2rem;
+    z-index: 2;
+    border:4px solid white;
+    width:75px!important;
+    height:75px!important;
+    box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);
+    
+}
+.user_email_post{
+    font-weight:600;
+    height: 2rem;
+    font-size: 2rem;
+    position: relative;
+    top:-0.2rem
+    
+}
+.cards_general{
+    width: 45rem;
+    position: relative;
+    left:12rem;
+    background-color: white;
+    border: none!important
+}
+
+.cards_post{
+    margin-bottom: 2rem;
+    
+}
+
+.votes_post{
+    width: 10rem;
+}
+.photo_card{
+    width: 45rem;
+    max-height: 20rem
 }
 #likes_up, #likes_down{
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
 }
-.likes_counter1{
-    position: relative;
-    height: 5rem;
-    padding:1rem;
-    background:rgb(169, 162, 185);
-    color: black;
-    border: rgba(182, 179, 179,0.5) 4px solid
-}
-.cards_post{
-    margin-bottom: 1rem;;
+.counter{
+    font-weight: 800;
+    font-size: 2rem;
 }
