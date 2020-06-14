@@ -55,7 +55,7 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  root to: 'users#show'
+  root to: 'users#index'
   resources :posts
   post '/post_new', to: 'posts#create'
   get '/post_show', to: 'posts#show'

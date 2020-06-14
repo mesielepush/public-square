@@ -9,6 +9,9 @@ class UsersController < ApplicationController
             @user = User.find_by_id(params[:user_id])
         end
     end
+    def index
+        
+    end
     def update
         
     end
