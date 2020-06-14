@@ -5,7 +5,7 @@
 .sign_form{
     background: rgba(126, 117, 117, 0.5);
     padding: 1rem;
-    margin-bottom: 2rem;;;
+    
 }
 .profile_back{
     height: 20rem!important;
@@ -102,4 +102,26 @@
 .counter{
     font-weight: 800;
     font-size: 2rem;
+}
+#form_posts{
+    width: 45rem;
+    
+}
+.recent_top{
+    width: 45rem;;
+    div{
+        position: relative;
+        left:13rem;
+        background-color: white;
+        width: 12rem;
+        border-bottom: 1px solid black;
+        
+    }
+}
+.active{
+    color:#52A6E6;
+    font-weight:700;
+}
+.inactive{
+    color:red
 }

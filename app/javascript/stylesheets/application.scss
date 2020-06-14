@@ -22,8 +22,8 @@ body {
         font-size: 1.5rem;
     }
     .left_bar_photo{
-        height: 75px;
-        width: 75px;
+        height: 75px!important;
+        width: 85px!important;
     }
     .profile_left_bar{
         height: 8.6rem;;
@@ -80,7 +80,7 @@ body {
                     font-size: 1.2rem;
                     font-weight: bold;
                     top:1.5rem;
-                    left: 2rem
+                    left: 3rem
                 }
             }
         }
@@ -155,10 +155,10 @@ body {
     transform: scaleX(-1);
 }
 .some-class {
-    height: 20rem!important;
-    width:20rem!important;
+    height: 15rem!important;
+    width:15rem!important;
     position: relative;
-    top: 1.7rem;
+    top: 2.5rem;
     left: 17rem; 
     fill: #ffffff;
     
@@ -253,9 +253,8 @@ body {
 
 
 .sign_form{
-    background: rgba(209, 178, 149, 0.5);
-    padding: 1rem;
-    margin-bottom: 2rem;;;
+    background: white;
+    
 }
 #my_tweets_title{
     font-size: 2rem;

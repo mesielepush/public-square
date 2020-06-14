@@ -1,27 +1,24 @@
-<div class="col d-flex justify-content-center align-items-center">
-    <div id='form_posts'>
-        <h3>
-            New Post
-        </h3>
-        <div class="container d-flex justify-content-center create_group sign_form">
-            <%= form_for(@post, url: post_new_url(@post)) do |f| %>
-                <h3 class='text-center'>New Post</h3>
-                <div class="field text-center">
-                    <%= f.label :avatar_url, 'Photo url' %><br/>
-                    <%= f.text_field :avatar, autofocus: true, :size => 50  %>
-                </div>
-                
-                <div class="field text-center" >
-                    <%= f.label :message %><br />
-                    <%= f.text_field :content, autofocus: true, :size => 50 %>
-                </div>
+<section style = 'margin-top:8rem'>
+    <div class="col d-flex justify-content-center align-items-center">
+        <div id='form_posts'>
+            <div class="container d-flex justify-content-center sign_form">
+                <%= form_for(@post, url: post_new_url(@post)) do |f| %>
+                    <div class="field text-center">
+                        
+                        <%= f.text_field :avatar,  placeholder: "   PhotoUrl", autofocus: true, :size => 97  %>
+                    </div>
+                    <br>
+                    <div class="field text-center" >
+                        <%= f.text_field :content,  placeholder: "   Message", autofocus: true, :size => 97 %>
+                    </div>
 
-                <%= f.hidden_field :counter, value: 0 %>
-                <%= f.hidden_field :user_id, value: current_user.id %>
-                
-                <%= submit_tag("Post", class: 'btn btn-secondary', style: "color:white") %>
+                    <%= f.hidden_field :counter, value: 0 %>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    <br>
+                    <%= submit_tag("NewPost", class: 'btn btn-secondary', style: "background-color:#52A6E6") %>
 
-            <% end %>
+                <% end %>
+            </div>
         </div>
     </div>
-</div>
+</section>
