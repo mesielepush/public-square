@@ -12,6 +12,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  background             :string           default("https://i.imgur.com/moRYtBi.png")
+#  description            :string           default("Describe yourself...")
 #
 
 class User < ApplicationRecord

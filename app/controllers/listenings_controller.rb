@@ -11,10 +11,15 @@ class ListeningsController < ApplicationController
       redirect_to user_show_url(user_id: params[:other_id])
     end
   end
+  
+  def show
+    @following =  User.find_by_id(params[:user_id]).listenings
+  end
+
   def create
     
   end
   def vote_params
-    params.require(:other_id, :current)
+    params.require(:current).permit(:other_id)
   end
 end

@@ -1,3 +1,29 @@
 // Place all the styles related to the Listenings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.following{
+    margin-top:8.5rem;
+    height:100%;
+    width: 30rem;;
+    background-color: white;
+}
+.followings{
+    width: 45rem;
+    position: relative;
+    
+    border-bottom: 2px solid rgba(0,0,0,0.3);;
+    img{
+        width: 100px;
+        height: 100px;
+        margin-right: 2rem;;
+    }
+    span{
+        font-size: 2rem;
+        font-weight: 600;
+        color:black;
+    }
+}
+.follow{
+    text-emphasis: none!important;
+    text-decoration: none!important;
+}

@@ -16,7 +16,7 @@
 #                                       PUT    /users(.:format)                                                                         devise/registrations#update
 #                                       DELETE /users(.:format)                                                                         devise/registrations#destroy
 #                                       POST   /users(.:format)                                                                         devise/registrations#create
-#                                  root GET    /                                                                                        users#show
+#                                  root GET    /                                                                                        users#index
 #                                 posts GET    /posts(.:format)                                                                         posts#index
 #                                       POST   /posts(.:format)                                                                         posts#create
 #                              new_post GET    /posts/new(.:format)                                                                     posts#new
@@ -32,6 +32,7 @@
 #                            post_index GET    /post_index(.:format)                                                                    posts#index
 #                         new_listening GET    /new_listening(.:format)                                                                 listenings#new
 #                        show_followers GET    /show_followers(.:format)                                                                listeners#show
+#                        show_following GET    /show_following(.:format)                                                                listenings#show
 #         rails_mandrill_inbound_emails POST   /rails/action_mailbox/mandrill/inbound_emails(.:format)                                  action_mailbox/ingresses/mandrill/inbound_emails#create
 #         rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                  action_mailbox/ingresses/postmark/inbound_emails#create
 #            rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                     action_mailbox/ingresses/relay/inbound_emails#create
@@ -64,5 +65,6 @@ Rails.application.routes.draw do
   get '/post_index', to: 'posts#index'
   get '/new_listening', to: 'listenings#new'
   get '/show_followers', to: 'listeners#show'
+  get '/show_following', to: 'listenings#show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

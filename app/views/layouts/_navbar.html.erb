@@ -10,14 +10,19 @@
                 
             </div>
             <div class="followers_count d-flex" >
-                <div class="followers_left d-flex flex-column align-content-center text-center">
-                    <span class="numbers"><%= current_user.listenings.count() %></span>
-                    <span class = 'followers_span'>Following</span>
-                </div>
-                <div class="followers_left d-flex flex-column text-center">
-                    <span class="numbers"><%= current_user.listeners.count() %></span>
-                    <span class = 'followers_span'>Followers</span>
-                </div>
+                <a href=<%=show_following_url(user_id: current_user.id)%>>
+                    <div class="followers_left d-flex flex-column align-content-center text-center">
+                        <span class="numbers"><%= current_user.listenings.count() %></span>
+                        <span class = 'followers_span'>Following</span>
+                    </div>
+                </a>
+                <a href=<%=show_followers_url(user_id: current_user.id)%>>
+                    <div class="followers_left d-flex flex-column text-center">
+                        <span class="numbers"><%= current_user.listeners.count() %></span>
+                        <span class = 'followers_span'>Followers</span>
+                    </div>
+                </a>
+                
 
                 
             </div>
@@ -42,7 +47,7 @@
                     </li>
                 </a>
                 
-                <a href=<%=destroy_user_session_url%> method='delete'>
+                <a href=<%=destroy_user_session_url%> data-method="delete"  rel="nofollow" data-confirm="Are you sure?">
 
                     <li>
                         <svg height="28px" width="30px" viewBox="0 0 512.00533 512" >

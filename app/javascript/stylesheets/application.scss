@@ -37,25 +37,40 @@ body {
         position: relative;
         
     }
-    .followers_left{
-        color: #677D92;
-        border: 2px solid #131f30;
-        width: 100%;
-
-        .numbers{
-            position: relative;
-            font-size: 1.4rem;;
-            font-weight: 800;
-            top: 0.2rem;
-            color:#A5B1BD;
-        }
-        .followers_span{
-            position: relative;
-            bottom: 0.3rem;
-            font-size: 1rem;
-            color:#677D92;
+    a{
+        text-decoration: none;
+        .followers_left{
+            color: #677D92;
+            border: 2px solid #131f30;
+            width: 8.5rem;
+    
+            .numbers{
+                position: relative;
+                font-size: 1.4rem;;
+                font-weight: 800;
+                top: 0.2rem;
+                color:#A5B1BD;
+            }
+            .followers_span{
+                position: relative;
+                bottom: 0.3rem;
+                font-size: 1rem;
+                color:#677D92;
+            }
         }
     }
+    a:hover{
+        text-emphasis: none;
+        background-color: #52A6E6;
+        .followers_left{
+            span{
+                color:white
+            }
+            
+        }
+        
+    }
+    
     .left_bar_list{
 
         position: relative;

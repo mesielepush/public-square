@@ -1,0 +1,14 @@
+<section class="following container d-flex flex-column justify-content-center align-content-center">
+    
+    <% for user in @following%>
+        <a href=<%= user_show_url(user_id: user.other_id, current_id: current_user.id ) %> class='followings'>
+                            
+            <img class = 'img-fluid' src=<%= User.find_by_id(user.other_id).avatar%> alt="">
+            <span>
+                <%= User.find_by_id(user.other_id).email%>
+            </span>
+                        
+        </a>
+    <% end %>
+    
+</section>
