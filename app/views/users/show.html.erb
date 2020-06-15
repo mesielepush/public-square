@@ -1,5 +1,3 @@
-
-    
     <div style = 'margin-top:8.5rem; margin-bottom: 5rem'>
     
         <div class="d-flex flex-column justify-content-center">
@@ -45,6 +43,7 @@
                         </div>
 
                     </div>
+                    
                 <% elsif @user%>
                     <div class="card ">
                         <div class='photo_top_group_card'>
@@ -100,9 +99,12 @@
                                 
                         </div>
                     </div>
+                    
                 <%end%>
             </div>
-            
+            <div class="division d-flex flex-column justify-content-center container">
+
+            </div>
             </div>
             <% if @user == nil %>
                 <% user = current_user%>

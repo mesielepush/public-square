@@ -22,22 +22,31 @@
 <%else%>
     <div class="right_pane_other">
         <div class="other_profile d-flex flex-column justify-content-center align-content-center">
-            <img src=<%=@user.avatar%> alt="photo" class='img-fluid rounded-circle'>
+            <a href=<%= user_show_url(user_id: @user.id, current_id: current_user.id) %>>
+                <img src=<%=@user.avatar%> alt="" class='img-fluid rounded-circle'>
+            </a>
+            
             <div class="right_pane_email d-flex justify-content-center"> <%= current_user.email.split('@').first+'@' %> </div>
         </div>
         <div class="stats_other d-flex">
-            <div class="number_posts d-flex flex-column text-center">
-                <p><%=@user.posts.count()%></p>
-                <span>Posts</span>
-            </div>
-            <div class="right_following_other d-flex flex-column text-center">
-                <p><%=@user.listenings.count()%></p>
-                <span>Following</span>
-            </div>
-            <div class="right_following_other d-flex flex-column text-center">
-                <p><%=@user.listeners.count()%></p>
-                <span>Followers</span>
-            </div>
+            <a href=<%= user_show_url(user_id: @user.id, current_id: current_user.id) %>>
+                <div class="number_posts d-flex flex-column text-center">
+                    <p><%=@user.posts.count()%></p>
+                    <span>Posts</span>
+                </div>
+            </a>
+            <a href=<%= show_following_url(user_id: @user.id) %>>
+                <div class="right_following_other d-flex flex-column text-center">
+                    <p><%=@user.listenings.count()%></p>
+                    <span>Following</span>
+                </div>
+            </a>
+            <a href=<%= show_followers_url(user_id: @user.id) %>>
+                <div class="right_following_other d-flex flex-column text-center">
+                    <p><%=@user.listeners.count()%></p>
+                    <span>Followers</span>
+                </div>
+            </a>            
         </div>
     </div>
     

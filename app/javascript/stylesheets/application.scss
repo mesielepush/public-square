@@ -149,16 +149,6 @@ body {
     background-color: rgb(211, 112, 112)!important;
 }
 
-.form_init{
-    background-color: rgba(248, 247, 216, 0.0);
-    position: relative;
-    top: 5rem;;
-    padding-top: 5rem;;
-    left: 0;
-    width: 110%;
-    height: 110%;
-}
-
 #configuration{
 
     max-width: 4rem;
@@ -281,5 +271,22 @@ body {
     position: relative;
     
 }
-
-
+.front_page_icon{
+    display: flex;
+    justify-content: center;
+    
+    .face {
+        position: relative;
+        top:2rem;
+        left:9rem;
+        height: 25rem!important;
+        width:25rem!important;
+        fill: #ffffff;
+        
+      }
+}
+.new_post, .sign_up{
+    position:relative;
+    top:7rem;
+    background-color:white
+}

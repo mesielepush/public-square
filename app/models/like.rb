@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: likes
@@ -11,6 +13,5 @@
 #
 
 class Like < ApplicationRecord
-    belongs_to :user
-    
+  belongs_to :user
 end

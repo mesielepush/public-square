@@ -1,5 +1,11 @@
 <section class="following container d-flex flex-column justify-content-center align-content-center">
-    
+    <div class="profile_that_follows container d-flex flex-column justify-content-center text-center">
+        <a href=<%= user_show_url(user_id: @user.id, current_id: current_user.id) %>>
+            <img src=<%=@user.avatar%> alt="" class='img-fluid rounded-circle'>
+        </a>
+        <span style='font-size:1.8rem;font-weight:600'><%=@user.email%></span>
+        <span style='font-size:1.5rem;font-weight:600'>Follows:</span>
+    </div>
     <% for user in @following%>
         <%user = User.find_by_id(user.other_id)%>
         <div class=" d-flex container justify-content-center align-content-center text-center mb-5">

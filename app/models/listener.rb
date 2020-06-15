@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: listeners
@@ -10,5 +12,5 @@
 #
 
 class Listener < ApplicationRecord
-    belongs_to :user
+  belongs_to :user
 end

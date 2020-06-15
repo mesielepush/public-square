@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: responses
@@ -11,5 +13,5 @@
 #
 
 class Response < ApplicationRecord
-    belongs_to :post
+  belongs_to :post
 end
