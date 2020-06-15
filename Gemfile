@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'faker'
 gem 'inline_svg'
-
+gem
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -49,6 +49,7 @@ group :development do
 end
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 group :test do
   # Adds support for Capybara system testing and selenium driver
