@@ -1,12 +1,13 @@
 
-@import './bootstrap_custom.scss';
-@import './likes.scss';
-@import './listeners.scss';
-@import './listenings.scss';
-@import './posts.scss';
-@import './responses.scss';
-@import './users.scss';
-@import './votes.scss';
+@import 'bootstrap/scss/bootstrap';
+
+@import 'likes';
+@import 'listeners';
+@import 'listenings';
+@import 'posts';
+@import 'responses';
+@import 'users';
+@import 'votes';
 
 
 $twitter-dark: #36263a;
