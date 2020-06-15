@@ -35,10 +35,14 @@ user4.posts.new(content:"The true mind can weather all lies and illusions withou
 users = [user1,user2,user3,user4,user5,user6]
 
 20.times do
-    new_user = User.new( email: Faker::Internet.email,
-                         avatar: "https://picsum.photos/#{rand(320..360)}/#{rand(320..360)}",
-                         background: "https://picsum.photos/#{rand(800)}/#{rand(400)}",
-                         description: Faker::TvShows::DrWho.quote, 
+    email = Faker::Internet.email
+    avatar = "https://picsum.photos/#{rand(320..360)}/#{rand(320..360)}"
+    background = "https://picsum.photos/#{rand(800)}/#{rand(400)}"
+    description= Faker::TvShows::DrWho.quote
+    new_user = User.new( email: email,
+                         avatar: avatar,
+                         background: background,
+                         description: description, 
                          password: 'pppppp',
                          password_confirmation: 'pppppp')
     new_user.save
@@ -114,9 +118,14 @@ end
 end
 
 (7..26).each do |x|
+    content1 = Faker::Quote.matz
+    content2 = Faker::Quote.matz
+    avatar1  = "https://loremflickr.com/#{rand(600)}/#{rand(300)}"
+    avatar2  = "https://loremflickr.com/#{rand(800)}/#{rand(600)}"
+
     user = User.find_by_id(x)
-    user.posts.create(content: Faker::Quote.matz, counter: 0, avatar:"https://loremflickr.com/#{rand(600)}/#{rand(300)}")
-    user.posts.create(content: Faker::Quote.matz, counter: 0, avatar:"https://loremflickr.com/#{rand(800)}/#{rand(600)}")
+    user.posts.create(content: content1, counter: 0, avatar:avatar1)
+    user.posts.create(content: content2, counter: 0, avatar:avatar2)
 end
 
 user1.posts.new(content:"Monsters exist, but they are too few in number to be truly dangerous. More dangerous are the common men, the functionaries ready to believe and to act without asking questions.",

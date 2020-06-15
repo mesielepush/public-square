@@ -1,20 +1,44 @@
-<div class="right-pane p-3" >
-    <h4 class='user_email_right text-center' > <span>who to follow</span> </h4>
-    <ul class="follow-data d-flex flex-column text-center justify-content-around">
-        
-        <% ids = User.pluck(:id).shuffle[0..5] %>
-        <% User.where(id: ids).each do |user| %>
-            <% if user.id != current_user.id%>
-                <li>
-                    <a href=<%= user_show_url(user_id: user.id, current_id: current_user.id ) %>>
-                        <img src=<%=user.avatar%> alt="" class ='img-fluid rounded-circle' >
-                        <span>
-                            <%=user.email[0..15]%>
-                        </span>
-                    </a>
-                </li>
-            <% else %>
+<%if @user == nil %>
+    <div class="right-pane p-3" >
+        <h4 class='user_email_right text-center' > <span>who to follow</span> </h4>
+        <ul class="follow-data d-flex flex-column text-center justify-content-around">
+            
+            <% ids = User.pluck(:id).shuffle[0..5] %>
+            <% User.where(id: ids).each do |user| %>
+                <% if user.id != current_user.id%>
+                    <li>
+                        <a href=<%= user_show_url(user_id: user.id, current_id: current_user.id ) %>>
+                            <img src=<%=user.avatar%> alt="" class ='img-fluid rounded-circle' >
+                            <span>
+                                <%=user.email[0..15]%>
+                            </span>
+                        </a>
+                    </li>
+                <% else %>
+                <%end%>
             <%end%>
-        <%end%>
-    </ul>
-</div>
+        </ul>
+    </div>
+<%else%>
+    <div class="right_pane_other">
+        <div class="other_profile d-flex flex-column justify-content-center align-content-center">
+            <img src=<%=@user.avatar%> alt="photo" class='img-fluid rounded-circle'>
+            <div class="right_pane_email d-flex justify-content-center"> <%= current_user.email.split('@').first+'@' %> </div>
+        </div>
+        <div class="stats_other d-flex">
+            <div class="number_posts d-flex flex-column text-center">
+                <p><%=@user.posts.count()%></p>
+                <span>Posts</span>
+            </div>
+            <div class="right_following_other d-flex flex-column text-center">
+                <p><%=@user.listenings.count()%></p>
+                <span>Following</span>
+            </div>
+            <div class="right_following_other d-flex flex-column text-center">
+                <p><%=@user.listeners.count()%></p>
+                <span>Followers</span>
+            </div>
+        </div>
+    </div>
+    
+<% end %>

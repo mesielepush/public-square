@@ -181,3 +181,61 @@
     }
     
 }
+.right_pane_other{
+    position: fixed;
+    right: 0;
+    top:0;
+    z-index: 2;
+    height: 100%;
+    width: 15rem;
+    background-color: white;
+    border-left:1px solid rgba(176, 191, 201, 0.3);
+    .other_profile{
+        position: relative;
+        top:9rem;
+        border-bottom: 1px solid rgba(176, 191, 201, 0.4);
+        height: 10rem;;
+        img{
+            position: relative;
+            left:5rem;
+            width: 75px !important;
+            height: 75px!important;
+            box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);
+        }
+        .right_pane_email{
+            position: relative;
+            top:0.6rem;
+            color:#677D92;
+            
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+    .stats_other{
+        z-index: 3;
+        position:relative;
+        border-bottom: 1px solid rgba(176, 191, 201, 0.4);
+        top:9rem;;
+        height: 3.5rem;
+        div{
+            width: 5rem;
+            border-right:1px solid rgba(176, 191, 201, 0.9)!important;
+            p{
+                position: relative;
+                bottom: 0.25rem;
+                font-weight: 800;
+                font-size: 1.5rem;
+                height: 1rem;
+                color:#677D92;
+            }
+            span{
+                position: relative;
+                bottom: 0.25rem;;
+                font-size: 0.8rem;
+                color:#677D92;
+
+            }
+        }
+
+    }
+}
