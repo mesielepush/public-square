@@ -12,12 +12,12 @@ class UsersController < ApplicationController
     def index
         if params[:sorted] == 'time_ago'
             @sorted = 'time_ago'
-            @posts = Post.order('created_at').reverse.first(5)
+            @posts = Post.order('created_at').reverse.first(10)
             @post = Post.new
         elsif params[:sorted] == 'counter'
             @sorted = 'counter'
             @post = Post.new
-            @posts = Post.order('counter').last(5).reverse
+            @posts = Post.order('counter').last(8).reverse
         else
             @post = Post.new
             @posts = Post.last(5)

@@ -53,11 +53,14 @@
                         </div>
 
                         
-                        <div class="card-block text-center center_card_groups_index">
+                        <div class="card-block profile_other text-center">
                             
                             <img class= 'profile rounded-circle img-fluid' src=<%=@user.avatar%> alt="">
-                            
-                            <h4 class="card-title mt-3 group_title_scroll"><%=@user.email%></h4>
+                            <a href=<%= user_show_url(user_id: @user.id, current_id: current_user.id) %> >
+                                <h4 class="card-title mt-3">
+                                    <%=@user.email.split('@').first+'@'%>
+                                </h4>
+                            </a>
                             <div class="meta meta_card_relative">
                                 <h6 class='meta_card_group_index profile_description text-left'><%= @user.description %></h6>
                                 
@@ -128,7 +131,9 @@
                             <div class="post_creator d-flex justify-content-between">
                                 
                                 <p class = 'text-center user_email_post' >
-                                    <%= User.find_by_id(post.user_id).email %>
+                                    <a href=<%= user_show_url(user_id: post.user_id, current_id: current_user.id) %>>
+                                        <%= User.find_by_id(post.user_id).email.split('@').first+'@' %>
+                                    </a>
                                 </p>
                                 <div class="votes_post d-flex justify-content-around">
                                     <% if current_user.likes.find_by_post_id(post.id) == nil %>

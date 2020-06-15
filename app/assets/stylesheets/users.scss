@@ -7,14 +7,18 @@
     padding: 1rem;
     
 }
+.photo_top_group_card{
+    width: 45rem!important;
+}
 .profile_back{
     height: 20rem!important;
     width: 45rem!important;
     
 }
 .profile_description{
+    width: 38rem;;
     position: relative;
-    left:1rem
+    left:1.5rem
 }
 .profile{
     position: absolute;
@@ -81,8 +85,35 @@
     height: 2rem;
     font-size: 2rem;
     position: relative;
-    top:-0.2rem
-    
+    top:-0.2rem;
+    a{
+        text-decoration: none;
+        color:black;
+        
+    }
+    a:hover{
+        text-decoration: none;
+        color:black;
+        border-bottom: 5px solid #52A6E6;
+        
+        padding-right: 0.5rem;
+        box-shadow: -1px 10px 5px 0px rgba(0,0,0,0.34);
+    }
+}
+.profile_other{
+    a{
+        text-decoration: none;
+        color:black;
+        
+    }
+    a:hover{
+        text-decoration: none;
+        color:black;
+        border-bottom: 5px solid #52A6E6;
+        
+        padding-right: 0.5rem;
+        box-shadow: -1px 10px 5px 0px rgba(0,0,0,0.34);
+    }
 }
 .cards_general{
     width: 45rem;

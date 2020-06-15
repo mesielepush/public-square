@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
     def update
         if current_user.likes.find_by_post_id(params[:post_id]) == nil
-            @like = current_user.likes.create(post_id: params[:post_id], result: params[:vote])
+            @like = current_user.likes.create(post_id: params[:post_id])
         else
             @like  = current_user.likes.find_by_post_id(params[:post_id])
         end

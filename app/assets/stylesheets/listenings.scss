@@ -28,3 +28,19 @@
     width: 15rem!important;
     height: 15rem!important;
 }
+.group_title_scroll{
+    a{
+        text-decoration: none;
+        color:black;
+        
+    }
+    a:hover{
+        text-decoration: none;
+        color:black;
+        border-bottom: 5px solid #52A6E6;
+        padding-left: 0.5rem;
+        
+        padding-right: 0.5rem;
+        box-shadow: -1px 10px 5px 0px rgba(0,0,0,0.34);
+    }
+}
