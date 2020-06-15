@@ -15,7 +15,10 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-
+  config.serve_static_files = true
+  config.serve_static_assets = true
+  config.assets.digest = true
+  config.assets.precompile += %w(custom.css hover.css users.css works.css styleie9.css)
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
