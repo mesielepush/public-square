@@ -2,11 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.sign_form{
-    background: rgba(126, 117, 117, 0.5);
-    padding: 1rem;
-    
-}
+
 .photo_top_group_card{
     width: 45rem!important;
 }
@@ -144,8 +140,11 @@
     font-weight: 800;
     font-size: 2rem;
 }
-#form_posts{
-    width: 45rem;
+#form_posts_index{
+    position: relative!important;
+    top:-7rem!important;
+    width: 45rem!important;
+    padding-bottom: 7rem;;
     
 }
 .recent_top{

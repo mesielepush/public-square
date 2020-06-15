@@ -23,6 +23,22 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
 
+      <div class="field">
+        <%= f.label :description %><br />
+        <%= f.text_field :description, autofocus: true, autocomplete: "avatar" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :avatar %><br />
+        <%= f.text_field :avatar, autofocus: true, autocomplete: "avatar" %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :background_url %><br />
+        <%= f.text_field :background, autofocus: true, autocomplete: "background" %>
+      </div>
+
+      
       <div class="actions">
         <%= f.submit "Sign up" %>
       </div>
