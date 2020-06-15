@@ -29,6 +29,15 @@
     position: relative;
     font-size: 1rem;
     left:1rem;
+    a{
+        color:black!important;
+        text-decoration: none!important;
+    }
+    a:hover{
+        color:#52a6e6!important;
+        font-weight: 600;
+        border-bottom: 2px solid #52a6e6;
+    }
 }
 #new_post_icon{
     position: absolute;

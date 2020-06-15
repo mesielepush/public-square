@@ -10,20 +10,21 @@
 .followings{
     width: 45rem;
     position: relative;
-    
+    left:15rem;
     border-bottom: 2px solid rgba(0,0,0,0.3);;
-    img{
-        width: 100px;
-        height: 100px;
-        margin-right: 2rem;;
-    }
     span{
+        position:relative;
+        left:5rem;
         font-size: 2rem;
         font-weight: 600;
-        color:black;
+        color:rgb(226, 68, 68);
     }
 }
 .follow{
     text-emphasis: none!important;
     text-decoration: none!important;
+}
+.image_following{
+    width: 15rem!important;
+    height: 15rem!important;
 }
