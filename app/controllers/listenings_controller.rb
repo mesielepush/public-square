@@ -2,6 +2,7 @@
 
 # This shiny device polishes bared foos
 class ListeningsController < ApplicationController
+  # rubocop:disable Metrics/AbcSize
   def new
     @user = User.find_by_id(params[:current])
     if @user.listenings.new(other_id: params[:other_id]).save
@@ -12,6 +13,7 @@ class ListeningsController < ApplicationController
     end
     redirect_to user_show_url(user_id: params[:other_id])
   end
+  # rubocop:enable Metrics/AbcSize
 
   def show
     @user = User.find_by_id(params[:user_id])
