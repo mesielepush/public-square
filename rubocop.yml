@@ -276,8 +276,8 @@ Style/Documentation:
 Style/ConditionalAssignment:
   Enabled: false
 
- Metrics/MethodLength:
+Metrics/MethodLength:
   Enabled: false
-  
-Metrics/AbcSize:
-  Enable: false
+
+Metrics/LineLength:
+  Max: 160
