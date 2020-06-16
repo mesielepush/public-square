@@ -8,7 +8,7 @@
                         <%= User.find_by_id(@post.user_id).email %>
                     </p>
                     <p class="card-text">
-                        <%= @post.content %>
+                        <%= @post.content %>                        
                     </p>
                     <p>
                         <%= time_ago_in_words(@post.created_at) + ' ago' %> 
