@@ -275,4 +275,9 @@ Style/Documentation:
 
 Style/ConditionalAssignment:
   Enabled: false
+
+ Metrics/MethodLength:
+  Enabled: false
   
+Metrics/AbcSize:
+  Enable: false
