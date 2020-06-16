@@ -16,7 +16,6 @@ AllCops:
     - 'actionmailbox/test/dummy/**/*'
     - 'actiontext/test/dummy/**/*'
     - '**/node_modules/**/*'
-    - 'app/controllers/likes_controller.rb'
 
 Performance:
   Exclude:
