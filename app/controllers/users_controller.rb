@@ -4,27 +4,24 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   def show
     if params[:current_id] == params[:user_id]
-      @post = Post.new
       @user = nil
     else
-      @post = Post.new
       @user = User.find_by_id(params[:user_id])
     end
+    @post = Post.new
   end
 
   def index
     if params[:sorted] == 'time_ago'
       @sorted = 'time_ago'
       @posts = Post.order('created_at').reverse.first(10)
-      @post = Post.new
     elsif params[:sorted] == 'counter'
       @sorted = 'counter'
-      @post = Post.new
       @posts = Post.order('counter').last(8).reverse
-    else
-      @post = Post.new
+    else  
       @posts = Post.last(5)
     end
+    @post = Post.new
   end
 
   def update; end

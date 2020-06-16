@@ -1,17 +1,14 @@
 # frozen_string_literal: true
-
 class ListeningsController < ApplicationController
   def new
     @user = User.find_by_id(params[:current])
     if @user.listenings.new(other_id: params[:other_id]).save
-
-      flash.now[:notice] = 'You are slkjdhnfljks'
+      flash.now[:notice] = 'You now follow this member'
       User.find_by_id(params[:other_id]).listeners.new(other_id: @user.id).save
-      redirect_to user_show_url(user_id: params[:other_id])
     else
-      flash.now[:notice] = 'You are slkjdhnfljks'
-      redirect_to user_show_url(user_id: params[:other_id])
+      flash.now[:notice] = 'something happened you are not following this user'
     end
+    redirect_to user_show_url(user_id: params[:other_id])
   end
 
   def show
