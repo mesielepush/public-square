@@ -3,11 +3,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def show
-    if params[:current_id] == params[:user_id]
-      @user = nil
-    else
-      @user = User.find_by_id(params[:user_id])
-    end
+    @user = if params[:current_id] == params[:user_id]
+              nil
+            else
+              User.find_by_id(params[:user_id])
+            end
     @post = Post.new
   end
 
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     elsif params[:sorted] == 'counter'
       @sorted = 'counter'
       @posts = Post.order('counter').last(8).reverse
-    else  
+    else
       @posts = Post.last(5)
     end
     @post = Post.new

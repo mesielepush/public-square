@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :authenticate_user!
   def new
@@ -27,5 +28,5 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:counter, :content, :avatar)
-    end
+  end
 end

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class ListeningsController < ApplicationController
   def new
     @user = User.find_by_id(params[:current])
