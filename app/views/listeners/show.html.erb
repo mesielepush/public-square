@@ -8,7 +8,7 @@
     </div>
     <% for user in @followers%>
         <%user = User.find_by_id(user.other_id)%>
-        <div class=" d-flex container justify-content-center align-content-center text-center mb-5">
+        <div class=" d-flex container followers_card justify-content-center align-content-center text-center mb-5">
                 <div class="card ">
                     
                     <div class='photo_top_group_card'>
