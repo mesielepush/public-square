@@ -269,8 +269,8 @@ Performance/DeletePrefix:
 
 Performance/DeleteSuffix:
   Enabled: true
-  
+
 Style/Documentation:
-  Include:
-    - app/models/**/*
-    - lib/**/*
+  Enabled: false
+
+  

@@ -3,11 +3,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def show
-    @user = if params[:current_id] == params[:user_id]
-              nil
-            else
-              User.find_by_id(params[:user_id])
-            end
+    if params[:current_id] == params[:user_id]
+      @user = nil
+    else
+      @user = User.find_by_id(params[:user_id])
+    end
     @post = Post.new
   end
 
