@@ -17,6 +17,7 @@
 #  description            :string           default("Describe yourself...")
 #
 
+# This shiny device polishes bared foos
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

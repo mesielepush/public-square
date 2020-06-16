@@ -11,6 +11,7 @@
 #  user_id    :integer
 #
 
+# This shiny device polishes bared foos
 class Listening < ApplicationRecord
   belongs_to :user
 end

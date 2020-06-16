@@ -13,6 +13,7 @@
 #  avatar     :string
 #
 
+# This shiny device polishes bared foos
 class Post < ApplicationRecord
   belongs_to :user
   has_many :responses

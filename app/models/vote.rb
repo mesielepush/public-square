@@ -10,6 +10,7 @@
 #  updated_at :datetime         not null
 #
 
+# This shiny device polishes bared foos
 class Vote < ApplicationRecord
   belongs_to :post
 end

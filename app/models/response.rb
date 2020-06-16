@@ -12,6 +12,7 @@
 #  updated_at :datetime         not null
 #
 
+# This shiny device polishes bared foos
 class Response < ApplicationRecord
   belongs_to :post
 end

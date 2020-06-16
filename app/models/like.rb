@@ -12,6 +12,7 @@
 #  user_id    :integer
 #
 
+# This shiny device polishes bared foos
 class Like < ApplicationRecord
   belongs_to :user
 end
