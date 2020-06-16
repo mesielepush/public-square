@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This shiny device polishes bared foos
 class LikesController < ApplicationController
   def update
     @like = if current_user.likes.find_by_post_id(params[:post_id]).nil?

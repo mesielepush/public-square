@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This shiny device polishes bared foos
 class ResponsesController < ApplicationController
   before_action :authenticate_user!
   def new
