@@ -273,4 +273,6 @@ Performance/DeleteSuffix:
 Style/Documentation:
   Enabled: false
 
+Style/ConditionalAssignment:
+  Enabled: false
   
