@@ -15,6 +15,6 @@ class LikesController < ApplicationController
     puts '###########################'
     puts @post.counter
     puts '###########################'
-    
+    redirect_to post_show_url(id: @post.id, like: @like.result)
   end
 end
