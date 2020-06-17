@@ -7,9 +7,8 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 
 # Prevent database truncation if the environment is production
-# rubocop:disable LineLength
 abort('The Rails environment is running in production mode!') if Rails.env.production?
-# rubocop:enable LineLength
+
 require 'rspec/rails'
 require 'capybara/rails'
 
@@ -28,9 +27,8 @@ require 'capybara/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# rubocop:enable LineLength
+
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
-# rubocop:enable LineLength
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
