@@ -70,7 +70,8 @@
                 
                 <div style = 'position:relative'>
                     <img class="photo_card" src=<%=post.avatar%> alt="Post Image">
-                    <img src=<%= User.find_by_id(post.user_id).avatar  %> alt="" class='img-fluid rounded-circle avatar_post'>
+                    
+                    <img src=<%= post.user.avatar  %> alt="" class='img-fluid rounded-circle avatar_post'>
                 </div>
                 
                 <div class="card-body " id='show_cards_user'>
@@ -87,11 +88,11 @@
                         
                         <p class = 'text-center user_email_post'>
                             <a href=<%= user_show_url(user_id: post.user_id, current_id: current_user.id) %>>
-                                <%= User.find_by_id(post.user_id).email.split('@').first+'@' %>
+                                <%= post.user.email.split('@').first+'@' %>
                             </a>
                         </p>
                         <div class="votes_post d-flex justify-content-around">
-                            <% if current_user.likes.find_by_post_id(post.id) == nil %>
+                            <% if !@current_user_likes.include?(post.id) %>
                                 <a href=<%=likes_update_url(post_id: post.id, vote: -1)%> id='likes_down_link'>
                                     <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>
                                 </a>
@@ -110,7 +111,7 @@
                                     <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_up'>
                                 </a>
                             <%else%>
-                                <% if current_user.likes.find_by_post_id(post.id).result == 1 %>
+                                <% if @current_user_likes.include?(post.id) %>
 
                                     <a href=<%=likes_update_url(post_id: post.id, vote: -1)%> id='likes_down_link'>
                                         <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>

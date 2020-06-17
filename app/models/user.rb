@@ -35,4 +35,7 @@ class User < ApplicationRecord
                     confirmation: { case_sensitive: false }
 
   validates :description, length: { maximum: 250 }
+  
+ 
+
 end

@@ -4,20 +4,18 @@
         <ul class="follow-data d-flex flex-column text-center justify-content-around">
             
             
-            <% User.order('created_at').last(7).each do |user| %>
-                <% if user.id != current_user.id%>
-                    <% unless current_user.listenings.where(other_id:user.id).exists? %>
-                        <li>
-                            <a href=<%= user_show_url(user_id: user.id, current_id: current_user.id ) %>>
-                                <img src=<%=user.avatar%> alt="" class ='img-fluid rounded-circle' >
-                                <span>
-                                    <%=user.email[0..15]%>
-                                </span>
-                            </a>
-                        </li>
-                    <% end %>
-                <% else %>
-                <%end%>
+            <% @to_follow.each do |user| %>
+                
+                <li>
+                    <a href=<%= user_show_url(user_id: user.id, current_id: current_user.id ) %>>
+                        <img src=<%=user.avatar%> alt="" class ='img-fluid rounded-circle' >
+                        <span>
+                            <%=user.email[0..15]%>
+                        </span>
+                    </a>
+                </li>
+                    
+                
             <%end%>
         </ul>
     </div>
