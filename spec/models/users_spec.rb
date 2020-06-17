@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:user) { build(:user) }
-
 
   it 'is valid with valid attributes' do
     expect(user.valid?).to be(true)
@@ -27,5 +28,4 @@ RSpec.describe User, type: :model do
     it { should validate_length_of(:email).is_at_least(4) }
     it { should validate_length_of(:description).is_at_most(250), allow_nil: true }
   end
-  
 end

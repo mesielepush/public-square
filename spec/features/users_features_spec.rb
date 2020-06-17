@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 # rubocop: disable Metrics/BlockLength
@@ -9,7 +11,6 @@ RSpec.describe 'Users', type: :request do
       expect(response).to have_http_status(302)
     end
   end
-
 end
 feature 'User' do
   include Integration
@@ -47,7 +48,6 @@ feature 'User' do
       log_in
       expect(page).to have_content('Signed in successfully.')
     end
-
   end
 end
 # rubocop: enable Metrics/BlockLength

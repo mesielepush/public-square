@@ -32,5 +32,4 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true, length: { minimum: 4, maximum: 35 }, confirmation: { case_sensitive: false }
   validates :description, length: { maximum: 250 }
-  
 end
