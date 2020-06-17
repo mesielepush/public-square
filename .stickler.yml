@@ -16,7 +16,7 @@ files:
     - "README.md"
     - "node_modules/**/*"
     - "spec/rails_helper.rb"
-    - "spec/models/**/*"
+    - "spec/models/**"
     - "app/controllers/likes_controller.rb"
 
 # PLEASE DO NOT enable auto fixing options
