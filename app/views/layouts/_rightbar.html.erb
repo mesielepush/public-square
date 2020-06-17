@@ -50,6 +50,29 @@
                 </div>
             </a>            
         </div>
+        <div class="follows_right_pane">
+            <span class ='followers_id'>
+                Followers:
+            </span> 
+            <% @user.listeners.limit(5).each do |user_n| %>
+                
+                <ul>
+                    <% unless @user.id == user_n.id %>
+                      <li>
+                        
+                            <img src=<%=User.find_by_id(user_n.id).avatar%> alt="" class ='img-fluid rounded-circle'>
+                            <span>
+                                <%=User.find_by_id(user_n.id).email[0..15]%>
+                            </span>
+                       
+                    </li>
+                    <% end %>
+                    
+                </ul>           
+            
+            <%end%>
+        </div>
     </div>
+    
     
 <% end %>

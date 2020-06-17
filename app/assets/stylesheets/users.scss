@@ -257,3 +257,31 @@
     border-bottom:4px solid rgba(126, 123, 123, 0.5);
     margin-bottom: 4rem;;
 }
+.follows_right_pane{
+    position: relative;
+    top:11rem;
+    width: 25rem;
+    .followers_id{
+        position: relative;
+        left: 5rem;;
+        font-weight: 600;
+        font-size: 1.3rem;;
+    }
+    ul{
+        
+        li{
+            list-style-type:none;
+            
+            position: relative;
+            right:2rem;
+            text-decoration: none;
+            color:black;
+            img{
+                margin-right: 1rem;;
+                width: 50px!important;
+                height: 50px!important;
+            }
+            
+        }
+    }
+}
