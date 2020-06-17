@@ -3,17 +3,19 @@
         <h4 class='user_email_right text-center' > <span>who to follow</span> </h4>
         <ul class="follow-data d-flex flex-column text-center justify-content-around">
             
-            <% ids = User.pluck(:id).shuffle[0..5] %>
-            <% User.where(id: ids).each do |user| %>
+            
+            <% User.order('created_at').last(7).each do |user| %>
                 <% if user.id != current_user.id%>
-                    <li>
-                        <a href=<%= user_show_url(user_id: user.id, current_id: current_user.id ) %>>
-                            <img src=<%=user.avatar%> alt="" class ='img-fluid rounded-circle' >
-                            <span>
-                                <%=user.email[0..15]%>
-                            </span>
-                        </a>
-                    </li>
+                    <% unless current_user.listenings.where(other_id:user.id).exists? %>
+                        <li>
+                            <a href=<%= user_show_url(user_id: user.id, current_id: current_user.id ) %>>
+                                <img src=<%=user.avatar%> alt="" class ='img-fluid rounded-circle' >
+                                <span>
+                                    <%=user.email[0..15]%>
+                                </span>
+                            </a>
+                        </li>
+                    <% end %>
                 <% else %>
                 <%end%>
             <%end%>
