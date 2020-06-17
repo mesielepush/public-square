@@ -37,4 +37,4 @@ module Integration
     # click_link 'Sign Out'
     click_link 'LOGOUT'
   end
-  end
+end
