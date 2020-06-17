@@ -14,4 +14,5 @@
 # This shiny device polishes bared foos
 class Listening < ApplicationRecord
   belongs_to :user
+  validates :other_id, presence: true
 end

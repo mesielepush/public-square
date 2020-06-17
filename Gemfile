@@ -36,6 +36,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 4.0.0'
+  gem 'rubocop'
 end
 
 group :development do
@@ -52,6 +55,10 @@ group :production do
   gem 'rails_12factor'
 end
 group :test do
+  gem 'rails-controller-testing'
+  gem 'shoulda'
+  gem 'shoulda-matchers'
+  gem 'test-unit'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'

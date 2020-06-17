@@ -5,17 +5,17 @@
                 <%= form_for(@post, url: post_new_url(@post)) do |f| %>
                     <div class="field text-center" style = 'margin-bottom:0.2rem'>
                         
-                        <%= f.text_field :avatar,  placeholder: "   PhotoUrl", autofocus: true, :size => 97  %>
+                        <%= f.text_field :avatar,  placeholder: "   PhotoUrl", autofocus: true, :size => 97  ,id:'avatar'%>
                     </div>
                     
                     <div class="field text-center" >
-                        <%= f.text_field :content,  placeholder: "   Message", autofocus: true, :size => 97 %>
+                        <%= f.text_field :content,  placeholder: "   Message", autofocus: true, :size => 97 ,id:'content'%>
                     </div>
 
                     <%= f.hidden_field :counter, value: 0 %>
                     <%= f.hidden_field :user_id, value: current_user.id %>
                     
-                    <%= submit_tag("NewPost", class: 'btn btn-secondary', style: "background-color:#52A6E6") %>
+                    <%= submit_tag("NewPost", class: 'btn btn-secondary', style: "background-color:#52A6E6", id: 'commit') %>
 
                 <% end %>
             </div>
@@ -92,7 +92,7 @@
                         </p>
                         <div class="votes_post d-flex justify-content-around">
                             <% if current_user.likes.find_by_post_id(post.id) == nil %>
-                                <a href=<%=likes_update_url(post_id: post.id, vote: -1)%>>
+                                <a href=<%=likes_update_url(post_id: post.id, vote: -1)%> id='likes_down_link'>
                                     <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>
                                 </a>
                                 
@@ -106,13 +106,13 @@
                                         </span>
                                     <%end%>
 
-                                <a href=<%=likes_update_url(post_id: post.id, vote: 1)%>>
+                                <a href=<%=likes_update_url(post_id: post.id, vote: 1)%> id='likes_up_link'>
                                     <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_up'>
                                 </a>
                             <%else%>
                                 <% if current_user.likes.find_by_post_id(post.id).result == 1 %>
 
-                                    <a href=<%=likes_update_url(post_id: post.id, vote: -1)%>>
+                                    <a href=<%=likes_update_url(post_id: post.id, vote: -1)%> id='likes_down_link'>
                                         <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>
                                     </a>
                                     
@@ -143,7 +143,7 @@
                                             </span>
                                         <%end%>
 
-                                    <a href=<%=likes_update_url(post_id: post.id, vote: 1)%>>
+                                    <a href=<%=likes_update_url(post_id: post.id, vote: 1)%> id='likes_up_link'>
                                         <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_up'>
                                     </a>
 

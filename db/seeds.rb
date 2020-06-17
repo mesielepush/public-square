@@ -52,11 +52,11 @@ users = [user1, user2, user3, user4, user5, user6]
   new_user.listenings.new(other_id: 2).save
   User.find_by_id(2).listeners.new(other_id: new_user.id).save
 
-  new_user.likes.create(post_id: 1, result: 1)
+  new_user.likes.new(post_id: 1, result: 1).save
   post = Post.find_by_id(1)
   post.counter += 1
   post.save
-  new_user.likes.create(post_id: 8, result: 1)
+  new_user.likes.new(post_id: 8, result: 1).save
   post = Post.find_by_id(8)
   post.counter += 1
   post.save
