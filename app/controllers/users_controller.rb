@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def index
     @current_user_likes = current_user.likes
-    @to_follow = Listening.to_follow(current_user.id).first(10).map{|listening| listening.user}
+    @to_follow = Listening.to_follow(current_user.id).first(10).map(&:user)
     if params[:sorted] == 'time_ago'
       @sorted = 'time_ago'
       @posts = Post.includes(:user).order(created_at: :desc).first(10)
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     elsif params[:sorted] == 'counter'
       @sorted = 'counter'
       @posts = Post.includes(:user).order(counter: :desc).first(8)
-      
+
     else
       @posts = Post.includes(:user).limit(5)
     end
