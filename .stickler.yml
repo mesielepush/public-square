@@ -15,7 +15,7 @@ files:
     - "Rakefile"
     - "README.md"
     - "node_modules/**/*"
-    - "spec/**/*"
+    - "spec/rails_helper.rb"
     - "app/controllers/likes_controller.rb"
 
 # PLEASE DO NOT enable auto fixing options
