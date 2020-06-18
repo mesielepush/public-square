@@ -30,7 +30,6 @@ class UsersController < ApplicationController
       @posts = Post.includes(:user).limit(5)
     end
     @post = Post.new
-    
   end
 
   def update; end
