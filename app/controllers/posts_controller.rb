@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   def new
     @post = Post.new
-    
+
     @to_follow = Listening.to_follow(current_user.id).first(10).map(&:user)
   end
 
