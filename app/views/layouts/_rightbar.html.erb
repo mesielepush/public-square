@@ -4,7 +4,7 @@
         <ul class="follow-data d-flex flex-column text-center justify-content-around">
             
             
-            <% @to_follow.each do |user| %>
+            <%@to_follow.each do |user| %>
                 
                 <li>
                     <a href=<%= user_show_url(user_id: user.id, current_id: current_user.id ) %>>
@@ -26,7 +26,7 @@
                 <img src=<%=@user.avatar%> alt="" class='img-fluid rounded-circle'>
             </a>
             
-            <div class="right_pane_email d-flex justify-content-center"> <%= current_user.email.split('@').first+'@' %> </div>
+            <div class="right_pane_email d-flex justify-content-center"> <%= @user.email.split('@').first+'@' %> </div>
         </div>
         <div class="stats_other d-flex">
             <a href=<%= user_show_url(user_id: @user.id, current_id: current_user.id) %>>
@@ -52,19 +52,20 @@
             <span class ='followers_id'>
                 Followers:
             </span> 
-            <% @user.listeners.limit(5).each do |user_n| %>
+            <% @user.listeners.limit(5).each do |user| %>
                 
                 <ul>
-                    <% unless @user.id == user_n.id %>
+                
+                    
                       <li>
                         
-                            <img src=<%=User.find_by_id(user_n.id).avatar%> alt="" class ='img-fluid rounded-circle'>
+                            <img src=<%=User.find_by_id(user.other_id).avatar%> alt="" class ='img-fluid rounded-circle'>
                             <span>
-                                <%=User.find_by_id(user_n.id).email[0..15]%>
+                                <%=User.find_by_id(user.other_id).email%>
                             </span>
                        
                     </li>
-                    <% end %>
+                    
                     
                 </ul>           
             

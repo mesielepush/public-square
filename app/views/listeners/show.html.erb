@@ -19,7 +19,13 @@
                         
                         <img class= 'profile rounded-circle img-fluid' src=<%=user.avatar%> alt="">
                         
-                        <h4 class="card-title mt-3 group_title_scroll"><%=user.email.split('@').first+'@'%></h4>
+
+                        <h4 class="card-title mt-3 group_title_scroll">
+                        <a href=<%= user_show_url(user_id: user.id, current_id: current_user.id) %>>
+                            <%=user.email.split('@').first+'@'%>
+                        </a>
+                        </h4>
+
                         <div class="meta meta_card_relative">
                             <h6 class='meta_card_group_index profile_description text-left'><%=user.description%></h6>
                             

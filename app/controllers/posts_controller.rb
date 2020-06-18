@@ -5,14 +5,16 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   def new
     @post = Post.new
+    
+    @to_follow = Listening.to_follow(current_user.id).first(10).map(&:user)
   end
 
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to root_url, notice: 'Demand was successfully created.'
+      redirect_to root_url, notice: 'post was successfully created.'
     else
-      render :show, alert: 'demand was not created.'
+      render :show, alert: 'post was not created.'
     end
   end
 
