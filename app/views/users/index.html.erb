@@ -6,11 +6,11 @@
                 <%= form_for(@post, url: post_new_url(@post)) do |f| %>
                     <div class="field text-center" style = 'margin-bottom:0.2rem'>
                         
-                        <%= f.text_field :avatar,  placeholder: "   PhotoUrl", autofocus: true, :size => 97  ,id:'avatar'%>
+                        <%= f.text_field :avatar,  placeholder: "PhotoUrl", autofocus: true, :size => 97  ,id:'avatar'%>
                     </div>
                     
                     <div class="field text-center" >
-                        <%= f.text_field :content,  placeholder: "   Message", autofocus: true, :size => 97 ,id:'content'%>
+                        <%= f.text_field :content,  placeholder: "Message", autofocus: true, :size => 97 ,id:'content'%>
                     </div>
 
                     <%= f.hidden_field :counter, value: 0 %>

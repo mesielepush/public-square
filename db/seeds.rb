@@ -64,12 +64,8 @@ end
 
 (7..20).each do |x|
   user = User.find_by_id(x)
-  puts user
   user.listenings.new(other_id: 3).save
-  
   user.listenings.new(other_id: 4).save
-  
-
   user.likes.create(post_id: 5, result: 1)
   post = Post.find_by_id(5)
   post.counter += 1
