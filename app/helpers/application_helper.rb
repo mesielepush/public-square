@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+    
     def main_logo
         if current_user
             return 'position:relative;left:-25rem'
@@ -13,7 +14,7 @@ module ApplicationHelper
         end
     end
     def right_bar
-        if current_user
+        if current_user && @right_bar_on == nil
             render 'layouts/rightbar'
         end
     end
