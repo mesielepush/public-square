@@ -48,9 +48,9 @@ users = [user1, user2, user3, user4, user5, user6]
                       password_confirmation: 'pppppp')
   new_user.save
   new_user.listenings.new(other_id: 1).save
-  User.find_by_id(1).listeners.new(other_id: new_user.id).save
+  
   new_user.listenings.new(other_id: 2).save
-  User.find_by_id(2).listeners.new(other_id: new_user.id).save
+  
 
   new_user.likes.new(post_id: 1, result: 1).save
   post = Post.find_by_id(1)
@@ -64,10 +64,11 @@ end
 
 (7..20).each do |x|
   user = User.find_by_id(x)
+  puts user
   user.listenings.new(other_id: 3).save
-  User.find_by_id(3).listeners.new(other_id: user.id).save
+  
   user.listenings.new(other_id: 4).save
-  User.find_by_id(4).listeners.new(other_id: user.id).save
+  
 
   user.likes.create(post_id: 5, result: 1)
   post = Post.find_by_id(5)
@@ -86,9 +87,9 @@ end
 (21..26).each do |x|
   user = User.find_by_id(x)
   user.listenings.new(other_id: 5).save
-  User.find_by_id(5).listeners.new(other_id: user.id).save
+  
   user.listenings.new(other_id: 6).save
-  User.find_by_id(6).listeners.new(other_id: user.id).save
+  
 
   user.likes.create(post_id: 3, result: 1)
   post = Post.find_by_id(3)
@@ -108,7 +109,7 @@ end
   users.each do |user|
     if x != user.id
       user.listenings.new(other_id: x).save
-      User.find_by_id(x).listeners.new(other_id: user.id).save
+      
     end
   end
 end

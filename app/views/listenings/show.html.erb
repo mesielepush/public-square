@@ -6,8 +6,8 @@
         <span style='font-size:1.8rem;font-weight:600'><%=@user.email%></span>
         <span style='font-size:1.5rem;font-weight:600'>Follows:</span>
     </div>
-    <% for user in @following%>
-        <%user = User.find_by_id(user.other_id)%>
+    <% for user in following(@user.id)%>
+        
         <div class=" d-flex container followers_card justify-content-center align-content-center text-center mb-5">
                 <div class="card ">
                     
@@ -43,23 +43,12 @@
                                 
                                 <p class = 'profile_followers'>
                                     <span style = 'font-weight:bold'>
-                                        <%= user.listeners.count %>
+                                        <%= followers_count(user.id) %>
                                     </span>  <a href=<%= show_followers_url(user_id: current_user.id) %>> Followers</a>
                                 </p>
                             </div>
                             <div sytle='position:relative'>
-                                <% if current_user.listenings.where(other_id: user.id).exists? %>
-                                
-                                    <img  id = 'new_post_icon' class='img-fluid' src="https://i.imgur.com/f2EwRe2.png" alt="Follow">
-                                <% elsif current_user.id == user.id%>
-                                    <a href=<%= new_post_url %>>
-                                        <img  id = 'new_post_icon' class='img-fluid' src="https://i.imgur.com/hAWVdKd.png" alt="new post">
-                                    </a>
-                                <% else %>
-                                    <a href=<%= new_listening_url(other_id: user.id, current: current_user.id) %>>
-                                        <img  id = 'new_post_icon' class='img-fluid' src="https://i.imgur.com/FSLQPBS.png" alt="Follow">
-                                    </a>
-                                <% end %>
+                                <%=new_post_link(user)%>
                             </div>
                         </div>
                             

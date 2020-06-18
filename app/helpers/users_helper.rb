@@ -19,11 +19,11 @@ module UsersHelper
     end
 
     def follows_id
-        current_user.listenings.map{|follow| follow.other_id}
+        current_user.listenings.pluck(:other_id)
     end
 
     def like_ids
-        current_user.likes.map{|u| u.post_id }
+        current_user.likes.pluck(:post_id)
     end
 
     def sorted_top(sorted)

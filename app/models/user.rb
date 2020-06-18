@@ -27,7 +27,6 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :likes
-  has_many :listeners
   has_many :listenings
 
   validates :email, presence: true, uniqueness: true,

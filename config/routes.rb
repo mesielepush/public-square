@@ -33,7 +33,7 @@
 #                             user_show GET    /user_show(.:format)                                                                     users#show
 #                            post_index GET    /post_index(.:format)                                                                    posts#index
 #                         new_listening GET    /new_listening(.:format)                                                                 listenings#new
-#                        show_followers GET    /show_followers(.:format)                                                                listeners#show
+#                        show_followers GET    /show_followers(.:format)                                                                listenings#show_followers
 #                        show_following GET    /show_following(.:format)                                                                listenings#show
 #         rails_mandrill_inbound_emails POST   /rails/action_mailbox/mandrill/inbound_emails(.:format)                                  action_mailbox/ingresses/mandrill/inbound_emails#create
 #         rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                  action_mailbox/ingresses/postmark/inbound_emails#create
@@ -65,7 +65,7 @@ Rails.application.routes.draw do
   get '/user_show', to: 'users#show'
   get '/post_index', to: 'posts#index'
   get '/new_listening', to: 'listenings#new'
-  get '/show_followers', to: 'listeners#show'
+  get '/show_followers', to: 'listenings#show_followers'
   get '/show_following', to: 'listenings#show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

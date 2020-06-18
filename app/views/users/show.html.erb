@@ -34,7 +34,7 @@
                             
                             <p class = 'profile_followers'>
                                 <span style = 'font-weight:bold'>
-                                    <%= @user.listeners.count %>
+                                    <%=followers_count(@user.id) %>
                                 </span>  
                                 <a href=<%= show_followers_url(user_id: @user.id) %>> Followers</a>
                             </p>

@@ -18,7 +18,7 @@
                 </a>
                 <a href=<%=show_followers_url(user_id: current_user.id)%>>
                     <div class="followers_left d-flex flex-column text-center">
-                        <span class="numbers"><%= current_user.listeners.count() %></span>
+                        <span class="numbers"><%= followers_count(current_user.id) %></span>
                         <span class = 'followers_span'>Followers</span>
                     </div>
                 </a>

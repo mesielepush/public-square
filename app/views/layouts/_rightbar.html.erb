@@ -43,7 +43,7 @@
             </a>
             <a href=<%= show_followers_url(user_id: @user.id) %>>
                 <div class="right_following_other d-flex flex-column text-center">
-                    <p><%=@user.listeners.count()%></p>
+                    <p><%=followers_count(current_user.id)%></p>
                     <span>Followers</span>
                 </div>
             </a>            
@@ -52,16 +52,16 @@
             <span class ='followers_id'>
                 Followers:
             </span> 
-            <% @user.listeners.limit(5).each do |user| %>
+            <% followers( @user.id).last(5).each do |user| %>
                 
                 <ul>
                 
                     
                       <li>
                         
-                            <img src=<%=User.find_by_id(user.other_id).avatar%> alt="" class ='img-fluid rounded-circle'>
+                            <img src=<%=user.avatar%> alt="" class ='img-fluid rounded-circle'>
                             <span>
-                                <%=User.find_by_id(user.other_id).email%>
+                                <%=user.email%>
                             </span>
                        
                     </li>

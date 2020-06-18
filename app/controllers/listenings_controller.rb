@@ -7,7 +7,7 @@ class ListeningsController < ApplicationController
     @user = User.find_by_id(params[:current])
     if @user.listenings.new(other_id: params[:other_id]).save
       flash.now[:notice] = 'You now follow this member'
-      User.find_by_id(params[:other_id]).listeners.new(other_id: @user.id).save
+      
     else
       flash.now[:notice] = 'something happened you are not following this user'
     end
@@ -17,7 +17,10 @@ class ListeningsController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:user_id])
-    @following = User.find_by_id(params[:user_id]).listenings
+  end
+  
+  def show_followers
+    @user = User.find_by_id(params[:user_id])
   end
 
   def create; end

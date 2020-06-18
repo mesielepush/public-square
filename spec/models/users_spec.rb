@@ -19,7 +19,6 @@ RSpec.describe User, type: :model do
   context 'ActiveRecord Associations' do
     it { should have_many(:posts) }
     it { should have_many(:likes) }
-    it { should have_many(:listeners) }
     it { should have_many(:listenings) }
   end
 
