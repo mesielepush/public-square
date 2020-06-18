@@ -1,0 +1,20 @@
+<div class="right-pane p-3" >
+        <h4 class='user_email_right text-center' > <span>who to follow</span> </h4>
+        <ul class="follow-data d-flex flex-column text-center justify-content-around">
+            
+            
+            <%@to_follow.each do |user| %>
+                
+                <li>
+                    <a href=<%= user_show_url(user_id: user.id, current_id: current_user.id ) %>>
+                        <img src=<%=user.avatar%> alt="" class ='img-fluid rounded-circle' >
+                        <span>
+                            <%=user.email[0..15]%>
+                        </span>
+                    </a>
+                </li>
+                    
+                
+            <%end%>
+        </ul>
+    </div>

@@ -11,7 +11,6 @@ class UsersController < ApplicationController
               User.find_by_id(params[:user_id])
 
             end
-
     @post = Post.new
     @to_follow = Listening.to_follow(current_user.id).first(10).map(&:user)
   end
@@ -31,6 +30,7 @@ class UsersController < ApplicationController
       @posts = Post.includes(:user).limit(5)
     end
     @post = Post.new
+    
   end
 
   def update; end

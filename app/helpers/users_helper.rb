@@ -8,16 +8,24 @@ module UsersHelper
                 image_tag("https://i.imgur.com/hAWVdKd.png", id: 'new_post_icon', class: 'img-fluid', alt: 'new post')
             end
         elsif follows_id.include?(user.id.to_s)
-            image_tag("https://i.imgur.com/f2EwRe2.png", id: 'new_post_icon', class: 'img-fluid', alt: 'new post')
-        
+            link_to(follower_destroy_url(other_id: user.id, current: current_user.id)) do
+            image_tag("https://cdn.onlinewebfonts.com/svg/img_188713.png", id: 'new_post_icon', class: 'img-fluid', alt: 'new post')
+            end
         elsif !follows_id.include?(user.id.to_s)
-            link_to(new_listening_url(other_id: @user.id, current: current_user.id)) do
+            link_to(new_listening_url(other_id: user.id, current: current_user.id)) do
                 image_tag('https://i.imgur.com/FSLQPBS.png', id: 'new_post_icon', class: 'img-fluid',alt: 'Follow')
             end
         end
-
+        
     end
-
+    def right_bar(a,b)
+        if a == b
+            render 'layouts/right_bar_user'
+        else
+            
+            render 'layouts/rightbar'
+        end
+    end
     def follows_id
         current_user.listenings.pluck(:other_id)
     end

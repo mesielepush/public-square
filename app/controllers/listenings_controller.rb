@@ -18,13 +18,19 @@ class ListeningsController < ApplicationController
   def show
     @user = User.find_by_id(params[:user_id])
   end
-  
+
   def show_followers
     @user = User.find_by_id(params[:user_id])
   end
 
   def create; end
 
+  def destroy
+    following = Listening.find_by(user_id: current_user.id,
+                                  other_id: params[:other_id]).destroy
+    redirect_back(fallback_location: root_path, notice: "You are not following that horrible user anymore")
+    
+  end
   def vote_params
     params.require(:current).permit(:other_id)
   end

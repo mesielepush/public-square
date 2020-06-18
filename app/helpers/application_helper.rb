@@ -13,10 +13,6 @@ module ApplicationHelper
             render 'layouts/leftbar'
         end
     end
-    def right_bar
-        if current_user && @right_bar_on == nil
-            render 'layouts/rightbar'
-        end
-    end
+    
 
 end
