@@ -7,11 +7,15 @@ module ApplicationHelper
         end
         ''
     end
-    def side_bars
+    def left_bar
         if current_user
             render 'layouts/leftbar'
+        end
+    end
+    def right_bar
+        if current_user
             render 'layouts/rightbar'
         end
     end
-    
+
 end

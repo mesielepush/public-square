@@ -24,43 +24,19 @@
 </section>
 
 <div class="container recent_top d-flex text-center mt-3">
-    <% if @sorted == 'time_ago'%>
+    
         <a href=<%= root_url(user_id: nil, current_id: current_user.id, sorted: 'counter') %>>
-            <div class="inactive">
+            <div class=<%=sorted_top(@sorted)%>>
                 Top
             </div>
         </a>
         
         <a href=<%= root_url(user_id: nil, current_id: current_user.id, sorted: 'time_ago') %>>
-            <div class="active">
+            <div class=<%=sorted_latest(@sorted)%>>
                 Latest
             </div>
         </a>
-    <%elsif @sorted == 'counter'%>
-        <a href=<%= root_url(user_id: nil, current_id: current_user.id, sorted: 'counter') %>>
-            <div class="active">
-                Top
-            </div>
-        </a>
-        
-        <a href=<%= root_url(user_id: nil, current_id: current_user.id, sorted: 'time_ago') %>>
-            <div class="inactive">
-                Latest
-            </div>
-        </a>
-    <%else%>
-        <a href=<%= root_url(user_id: nil, current_id: current_user.id, sorted: 'counter') %>>
-            <div class="inactive">
-                Top
-            </div>
-        </a>
-        
-        <a href=<%= root_url(user_id: nil, current_id: current_user.id, sorted: 'time_ago') %>>
-            <div class="inactive">
-                Recent
-            </div>
-        </a>
-    <%end%>
+    
 </div>
 
 <div class="container">
