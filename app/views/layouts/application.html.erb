@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
     <title>PublicSquare</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,30 +15,19 @@
   </head>
 
   <body>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-      <%= render 'layouts/navbar' %>
-      <div class="wrapper">
-          <% if current_user %>
-                        
-            <main class="content">
-              <%= render 'layouts/rightbar' %>
-              
-              
-            </main>
-
-          <% end %>
-          
-              <%= yield %>
-
-        </div>
-      
-
-
-
-
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render 'layouts/navbar' %>
     
+    <div class="wrapper">
+      <main class="content">
+        <%=side_bars%>
+      </main>
+      
+      <%= yield %>
+
+    </div>
+
   </body>
   
 </html>
