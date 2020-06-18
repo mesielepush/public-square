@@ -18,8 +18,8 @@ module UsersHelper
     end
   end
 
-  def right_bar(a, b)
-    if a == b
+  def right_bar(user, current)
+    if user == current
       render 'layouts/right_bar_user'
     else
 
@@ -67,7 +67,7 @@ module UsersHelper
   end
 
   def counter_color(counter)
-    return 'color:#FE4400' if counter > 0
+    return 'color:#FE4400' if counter.positive?
 
     'color:#9090F8'
   end

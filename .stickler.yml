@@ -17,8 +17,8 @@ files:
     - "node_modules/**/*"
     - "spec/rails_helper.rb"
     - "spec/models/**"
-    - "app/controllers/likes_controller.rb"
-    - "app/controllers/users_controller.rb"
+    - "app/controllers/**"
+    - "app/helpers/**"
 
 # PLEASE DO NOT enable auto fixing options
 # if you need extra support from you linter - do it in your local env as described in README for this config

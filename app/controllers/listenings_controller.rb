@@ -24,8 +24,8 @@ class ListeningsController < ApplicationController
   def create; end
 
   def destroy
-    following = Listening.find_by(user_id: current_user.id,
-                                  other_id: params[:other_id]).destroy
+    Listening.find_by(user_id: current_user.id,
+                      other_id: params[:other_id]).destroy
     redirect_back(fallback_location: root_path, notice: 'You are not following that horrible user anymore')
   end
 
