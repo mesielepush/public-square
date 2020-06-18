@@ -19,13 +19,23 @@ You can try it on the live heroku deployement: [PublicSquare](https://polar-taig
 ## Installation
 
 To install just fetch the gem file with:  
-**``` bundle install ```  
+``` bundle install ```  
 
 Set the data base with:  
-**``` rails db:{create,migrate,seed} ``` 
+``` rails db:{create,migrate,seed} ``` 
 
-And run the server:
-**``` rails server ```
+And run the server:  
+``` rails server ```
+
+You can use this users:
+* godzilla@gmail.com
+* alexander@gmail.com
+* natalie@gmail.com
+* dimartino@gmail.com
+* mishima@gmail.com'
+* hakuho@gmail.com'
+
+password for all is ```pppppp```
 
 ## Contact
 
