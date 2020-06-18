@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   def show
     @user = if params[:current_id] == params[:user_id]
-              nil
+              current_user
             else
 
               User.find_by_id(params[:user_id])

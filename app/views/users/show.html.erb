@@ -1,212 +1,106 @@
-    <div style = 'margin-top:8.5rem; margin-bottom: 5rem'>
-    
-        <div class="d-flex flex-column justify-content-center">
+<div style = 'margin-top:8.5rem; margin-bottom: 5rem'>
 
-            <div class=" d-flex container justify-content-center align-content-center text-center mb-5">
-                <% if @user == nil %>
-                    <div class="card ">
-                        
-                        <div class='photo_top_group_card'>
-                            <img class="card-img-top img-fluid profile_back" src=<%=current_user.background%> >
-                        </div>
-                        
-                        <div class="card-block text-center center_card_groups_index">
-                            
-                            <img class= 'profile rounded-circle img-fluid' src=<%=current_user.avatar%> alt="">
-                            
-                            <h4 class="card-title mt-3 group_title_scroll"><%=current_user.email%></h4>
-                            <div class="meta meta_card_relative">
-                                <h6 class='meta_card_group_index profile_description text-left'><%=current_user.description%></h6>
-                                
-                            </div>
-                            <div class="card-text card-text_groups d-flex justify-content-between">
-                                <div class='d-flex' >
-                                    <p class = 'profile_followers' style='margin-right:1rem'>
-                                        <span style = 'font-weight:bold'>
-                                            <%= current_user.listenings.count %>
-                                        </span>  Following
-                                    </p>
-                                    
-                                    <p class = 'profile_followers'>
-                                        <span style = 'font-weight:bold'>
-                                            <%= current_user.listeners.count %>
-                                        </span>  <a href=<%= show_followers_url(user_id: current_user.id) %>> Followers</a>
-                                    </p>
-                                </div>
-                                <div sytle='position:relative'>
-                                    <a href=<%= new_post_url %>>
-                                        <img  id = 'new_post_icon' class='img-fluid' src="https://i.imgur.com/hAWVdKd.png" alt="new post">
-                                    </a>
-                                </div>
-                            </div>
-                                
-                        </div>
+    <div class="d-flex flex-column justify-content-center">
 
-                    </div>
-                    
-                <% elsif @user%>
-                    <div class="card ">
-                        <div class='photo_top_group_card'>
-                            <img class="card-img-top img-fluid profile_back" src=<%=@user.background%> >
-                            
-                        </div>
-
-                        
-                        <div class="card-block profile_other text-center">
-                            
-                            <img class= 'profile rounded-circle img-fluid' src=<%=@user.avatar%> alt="">
-                            <a href=<%= user_show_url(user_id: @user.id, current_id: current_user.id) %> >
-                                <h4 class="card-title mt-3">
-                                    <%=@user.email.split('@').first+'@'%>
-                                </h4>
-                            </a>
-                            <div class="meta meta_card_relative">
-                                <h6 class='meta_card_group_index profile_description text-left'><%= @user.description %></h6>
-                                
-                            </div>
-                            <div class="card-text card-text_groups d-flex justify-content-between">
-                                <div class='d-flex' >
-                                    <p class = 'profile_followers' style='margin-right:1rem'>
-                                        <span style = 'font-weight:bold'>
-                                            <%= @user.listenings.count %>
-                                        </span>  
-                                        <a href=<%= show_following_url(user_id: @user.id) %>>
-                                            Following
-                                        </a>
-                                    </p>
-                                    
-                                    <p class = 'profile_followers'>
-                                        <span style = 'font-weight:bold'>
-                                            <%= @user.listeners.count %>
-                                        </span> 
-                                        <a href=<%= show_followers_url(user_id: @user.id) %> >
-                                            Followers
-                                        </a>
-                                    </p>
-                                </div>
-                                <div sytle='position:relative'>
-                                    <% if current_user.listenings.where(other_id: @user.id).exists? %>
-                                        
-                                        <img  id = 'new_post_icon' class='img-fluid' src="https://i.imgur.com/f2EwRe2.png" alt="Follow">
-                                        
-                                    <% else %>
-                                        <a href=<%= new_listening_url(other_id: @user.id, current: current_user.id) %>>
-                                            <img  id = 'new_post_icon' class='img-fluid' src="https://i.imgur.com/FSLQPBS.png" alt="Follow">
-                                        </a>
-                                    <% end %>
-                                </div>
-                            </div>
-                                
-                        </div>
-                    </div>
-                    
-                <%end%>
-            </div>
-            <div class="division d-flex flex-column justify-content-center container">
-
-            </div>
-            </div>
-            <% if @user == nil %>
-                <% user = current_user%>
-            <% elsif @user%>
-                <% user = @user%>
-            <%end%>
-            <% user.posts.sort_by(&:created_at).reverse.each do |post| %>
-                <div class="container d-flex flex-column justify-content-center cards_post">
-                    <div class="card cards_general align-content-center justify-content-center">
-                        
-                        <div style = 'position:relative'>
-                            <img class="photo_card" src=<%=post.avatar%> alt="Post Image">
-                            <img src=<%= User.find_by_id(post.user_id).avatar  %> alt="" class='img-fluid rounded-circle avatar_post'>
-                        </div>
-                        
-                        <div class="card-body " id='show_cards_user'>
-                            
-                            <p class="card-text post_content">
-                                <%= post.content %>
-                            </p>
-                            
-                            <p style='padding-bottom:2rem;font-weight: 800;'>
-                                <%= time_ago_in_words(post.created_at) + ' ago' %> 
-                            </p>
-
-                            <div class="post_creator d-flex justify-content-between">
-                                
-                                <p class = 'text-center user_email_post' >
-                                    <a href=<%= user_show_url(user_id: post.user_id, current_id: current_user.id) %>>
-                                        <%= User.find_by_id(post.user_id).email.split('@').first+'@' %>
-                                    </a>
-                                </p>
-                                <div class="votes_post d-flex justify-content-around">
-                                    <% if current_user.likes.find_by_post_id(post.id) == nil %>
-                                        <a href=<%=likes_update_url(post_id: post.id, vote: -1)%>>
-                                            <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>
-                                        </a>
-                                        
-                                            <% if post.counter >0 %>
-                                                <span class="counter" style = 'color:#FE4400'>
-                                                    <%=post.counter%>
-                                                </span>
-                                            <% else %>
-                                                <span class="counter" style = 'color:#9090F8'>
-                                                    <%=post.counter%>
-                                                </span>
-                                            <%end%>
-
-                                        <a href=<%=likes_update_url(post_id: post.id, vote: 1)%>>
-                                            <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_up'>
-                                        </a>
-                                    <%else%>
-                                        <% if current_user.likes.find_by_post_id(post.id).result == 1 %>
-
-                                            <a href=<%=likes_update_url(post_id: post.id, vote: -1)%>>
-                                                <img src="https://i.imgur.com/eoLBqit.png" alt="" id='likes_down'>
-                                            </a>
-                                            
-                                                <% if post.counter >0 %>
-                                                    <span class="counter" style = 'color:#FE4400'>
-                                                        <%=post.counter%>
-                                                    </span>
-                                                <% else %>
-                                                    <span class="counter" style = 'color:#9090F8'>
-                                                        <%=post.counter%>
-                                                    </span>
-                                                <%end%>
-
-                                            
-                                            <img src="https://i.imgur.com/QSyr92p.png" alt="" id='likes_up'>
-
-                                        <%else%>
-                                        
-                                            <img src="https://i.imgur.com/Y51wRgl.png" alt="" id='likes_down'>
-                                            
-                                                <% if post.counter >0 %>
-                                                    <span class="counter" style = 'color:#FE4400'>
-                                                        <%=post.counter%>
-                                                    </span>
-                                                <% else %>
-                                                    <span class="counter" style = 'color:#9090F8'>
-                                                        <%=post.counter%>
-                                                    </span>
-                                                <%end%>
-
-                                            <a href=<%=likes_update_url(post_id: post.id, vote: 1)%>>
-                                                <img src="https://i.imgur.com/3AJj63r.png" alt="" id='likes_up'>
-                                            </a>
-
-                                        <%end%>
-                                    <%end%>
-                                </div>
-
-                            </div>
-                                                           
-                        </div>
-
-                    </div>
+        <div class=" d-flex container justify-content-center align-content-center text-center mb-5">
+            
+            <div class="card ">
+                
+                <div class='photo_top_group_card'>
+                    <img class="card-img-top img-fluid profile_back" src=<%=@user.background%> >
                 </div>
-            <%end%>
+                
+                <div class="card-block text-center center_card_groups_index">
+                    
+                    <img class= 'profile rounded-circle img-fluid' src=<%=@user.avatar%> alt="">
+                    
+                    <a href=<%= user_show_url(user_id: @user.id, current_id: current_user.id) %> >
+                        <h4 class="card-title mt-3">
+                            <%=@user.email.split('@').first+'@'%>
+                        </h4>
+                    </a>
+
+                    <div class="meta meta_card_relative">
+                        <h6 class='meta_card_group_index profile_description text-left'><%=@user.description%></h6>
+                    </div>
+
+                    <div class="card-text card-text_groups d-flex justify-content-between">
+                        <div class='d-flex' >
+                            <p class = 'profile_followers' style='margin-right:1rem'>
+                                <span style = 'font-weight:bold'>
+                                    <%= @user.listenings.count %>
+                                </span>  Following
+                            </p>
+                            
+                            <p class = 'profile_followers'>
+                                <span style = 'font-weight:bold'>
+                                    <%= @user.listeners.count %>
+                                </span>  
+                                <a href=<%= show_followers_url(user_id: @user.id) %>> Followers</a>
+                            </p>
+                        </div>
+                        <div sytle='position:relative'>
+                            <%=new_post_link(@user)%>
+                        </div>
+                        
+                    </div>
+                        
+                </div>
+
+            </div>
+                
             
         </div>
-
+        
+        <div class="division d-flex flex-column justify-content-center container">
+        </div>
+        
     </div>
 
+</div>
+
+<% @user.posts.sort_by(&:created_at).reverse.each do |post| %>
+    <div class="container d-flex flex-column justify-content-center cards_post">
+        <div class="card cards_general align-content-center justify-content-center">
+            
+            <div style = 'position:relative'>
+                <img class="photo_card" src=<%=post.avatar%> alt="Post Image">
+                <img src=<%= post.user.avatar  %> alt="" class='img-fluid rounded-circle avatar_post'>
+            </div>
+            
+            <div class="card-body " id='show_cards_user'>
+                
+                <p class="card-text post_content">
+                    <%= post.content %>
+                </p>
+                
+                <p style='padding-bottom:2rem;font-weight: 800;'>
+                    <%= time_ago_in_words(post.created_at) + ' ago' %> 
+                </p>
+
+                <div class="post_creator d-flex justify-content-between">
+                    
+                    <p class = 'text-center user_email_post' >
+                        <a href=<%= user_show_url(user_id: post.user_id, current_id: current_user.id) %>>
+                            <%= post.user.email.split('@').first+'@' %>
+                        </a>
+                    </p>
+                    <div class="votes_post d-flex justify-content-around">
+                        
+                        <%=down_links(post.id)%>          
+                    
+                            <span class="counter" style = <%=counter_color(post.counter)%>>
+                                <%=post.counter%>
+                            </span>                    
+
+                        <%=up_links(post.id)%>
+
+                    </div>
+
+                </div>
+                                                
+            </div>
+
+        </div>
+    </div>
+<%end%>

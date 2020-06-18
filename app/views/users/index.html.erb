@@ -69,17 +69,11 @@
                         </p>
                         <div class="votes_post d-flex justify-content-around">
                         
-                            <%=down_links(post.id)%>
-                                
-                                    <% if post.counter >0 %>
-                                        <span class="counter" style = 'color:#FE4400'>
-                                            <%=post.counter%>
-                                        </span>
-                                    <% else %>
-                                        <span class="counter" style = 'color:#9090F8'>
-                                            <%=post.counter%>
-                                        </span>
-                                    <%end%>
+                            <%=down_links(post.id)%>          
+                    
+                                <span class="counter" style = <%=counter_color(post.counter)%>>
+                                    <%=post.counter%>
+                                </span>                    
 
                             <%=up_links(post.id)%>
                             
