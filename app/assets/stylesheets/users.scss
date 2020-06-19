@@ -1,108 +1,287 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-.main{
-    background: red;;
-}
 
 
-.rojo{
-    background: red;
+.photo_top_group_card{
+    width: 45rem!important;
 }
-
-.wrapper {
-    display: flex;
-    align-items: stretch;
+.profile_back{
+    height: 20rem!important;
+    width: 45rem!important;
+    
 }
-
-#sidebar.active {
-    margin-left: -250px;
-}
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    min-height: 100vh;
-}
-a[data-toggle="collapse"] {
+.profile_description{
+    width: 38rem;;
     position: relative;
+    left:1.5rem
 }
-
-.dropdown-toggle::after {
-    display: block;
+.profile{
     position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+    top: 17.5rem;
+    height:75px!important;
+    width: 75px!important;
+    box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);
+    left: 1.5rem;
+    border: 4px solid white
 }
-@media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
+.profile_followers{
+    position: relative;
+    font-size: 1rem;
+    left:1rem;
+    a{
+        color:black!important;
+        text-decoration: none!important;
     }
-    #sidebar.active {
-        margin-left: 0;
+    a:hover{
+        color:#52a6e6!important;
+        font-weight: 600;
+        border-bottom: 2px solid #52a6e6;
     }
 }
-
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+#new_post_icon{
+    z-index: 6;
+    position: absolute;
+    width: 60px!important;
+    right: 1rem;
+    bottom: 1rem;
 }
 
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: #999;
+#show_cards_user{
+    position: relative;
+    color:rgb(0, 0, 0);
+    background: #ffffff;
+    width: 45rem;
+    text-align:justify;
+    border:2px solid rgba(223, 219, 219,0.5)
+    
+}
+.post_content{
+    margin-top: 1.5rem;
+    font-weight: 500;
+}
+.post_creator{
+    background: rgb(255, 255, 255);
+    height: 2rem;
+    position: relative;
+    top:-1.5rem;
+}
+.avatar_post{
+    position:absolute;
+    bottom:-2rem;
+    right:2rem;
+    z-index: 2;
+    border:4px solid white;
+    width:75px!important;
+    height:75px!important;
+    box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);
+    
+}
+.user_email_post{
+    font-weight:600;
+    height: 2rem;
+    font-size: 2rem;
+    position: relative;
+    top:-0.2rem;
+    a{
+        text-decoration: none;
+        color:black;
+        
+    }
+    a:hover{
+        text-decoration: none;
+        color:black;
+        border-bottom: 5px solid #52A6E6;
+        
+        padding-right: 0.5rem;
+        box-shadow: -1px 10px 5px 0px rgba(0,0,0,0.34);
+    }
+}
+.profile_other{
+    a{
+        text-decoration: none;
+        color:black;
+        
+    }
+    a:hover{
+        text-decoration: none;
+        color:black;
+        border-bottom: 5px solid #52A6E6;
+        
+        padding-right: 0.5rem;
+        box-shadow: -1px 10px 5px 0px rgba(0,0,0,0.34);
+    }
+}
+.cards_general{
+    width: 45rem;
+    position: relative;
+    left:12rem;
+    background-color: white;
+    border: none!important
 }
 
-a, a:hover, a:focus {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.3s;
+.cards_post{
+    margin-bottom: 2rem;
+    
 }
 
-#sidebar {
-    /* don't forget to add all the previously mentioned styles here too */
-    background: #7386D5;
-    color: #fff;
-    transition: all 0.3s;
+.votes_post{
+    width: 10rem;
 }
+.photo_card{
+    width: 45rem;
+    max-height: 20rem
+}
+#likes_up, #likes_down{
+    width: 45px;
+    height: 45px;
+}
+.counter{
+    font-weight: 800;
+    font-size: 2rem;
+}
+#form_posts_index{
+    position: relative!important;
+    top:-7rem!important;
+    width: 45rem!important;
+    padding-bottom: 7rem;;
+    
+}
+.recent_top{
+    width: 45rem;
+    text-decoration: none!important;
+    div{
+        position: relative;
+        left:13rem;
+        background-color: white;
+        width: 7rem;
+        height: 2rem;;
+        border-bottom: 1px solid #A5B1BD;
+        margin-bottom: 1rem;
+        
+    }
+    a{
+        text-decoration: none!important;
+    }
+    div:hover{
+        background-color: rgba(79, 174, 230, 0.3);
+        
+    }
+    .active{
+        color:#52A6E6;
+        font-size: 1.2rem;
+        font-weight:700;
+        border-bottom:4px solid #52a6e6!important;
+        text-decoration: none!important;
+    }
+    .inactive{
+        color:#A5B1BD;
+        font-size: 1.2rem;
+        font-weight:700;
+    }
+    
+}
+.right_pane_other{
+    position: fixed;
+    right: 0;
+    top:0;
+    z-index: 2;
+    height: 100%;
+    width: 15rem;
+    background-color: white;
+    border-left:1px solid rgba(176, 191, 201, 0.3);
+    .other_profile{
+        position: relative;
+        top:9rem;
+        border-bottom: 1px solid rgba(176, 191, 201, 0.4);
+        height: 10rem;;
+        img{
+            position: relative;
+            left:5rem;
+            width: 75px !important;
+            height: 75px!important;
+            box-shadow: 2px 10px 11px -8px rgba(0,0,0,0.75);
+        }
+        .right_pane_email{
+            position: relative;
+            top:0.6rem;
+            color:#677D92;
+            
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+    .stats_other{
+        z-index: 3;
+        position:relative;
+        border-bottom: 1px solid rgba(176, 191, 201, 0.4);
+        top:9rem;;
+        height: 3.5rem;
+        a{
+            text-decoration: none;
+            border-right:1px solid rgba(176, 191, 201, 0.9);
+            div{
+                width: 5rem;
+                
+                p{
+                    position: relative;
+                    bottom: 0.25rem;
+                    font-weight: 800;
+                    font-size: 1.5rem;
+                    height: 1rem;
+                    color:#677D92;
+                }
+                span{
+                    position: relative;
+                    bottom: 0.25rem;;
+                    font-size: 0.8rem;
+                    color:#677D92;
+    
+                }
+            }
+        }
+        a:hover{
+            
+            background-color: #52A6E6;
+            p{
+                color: white;
+            }
+            span{
+                color: white;
+            }
+            
+        }
+        
 
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
+    }
 }
-
-#sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+.division{
+    width: 65rem;
+    border-bottom:4px solid rgba(126, 123, 123, 0.5);
+    margin-bottom: 4rem;;
 }
-
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
-#sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
-}
-
-#sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
-}
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #6d7fcc;
+.follows_right_pane{
+    position: relative;
+    top:11rem;
+    width: 25rem;
+    .followers_id{
+        position: relative;
+        left: 5rem;;
+        font-weight: 600;
+        font-size: 1.3rem;;
+    }
+    ul{
+        
+        li{
+            list-style-type:none;
+            
+            position: relative;
+            right:2rem;
+            text-decoration: none;
+            color:black;
+            img{
+                margin-right: 1rem;;
+                width: 50px!important;
+                height: 50px!important;
+            }
+            
+        }
+    }
 }

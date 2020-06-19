@@ -1,77 +1,108 @@
-<div class="container">
-    <div class="wrapper">
-            <!-- Sidebar -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Bootstrap Sidebar</h3>
+<%=right_bar(@user.id,current_user.id)%>
+
+<div style = 'margin-top:8.5rem; margin-bottom: 5rem'>
+
+    <div class="d-flex flex-column justify-content-center">
+
+        <div class=" d-flex container justify-content-center align-content-center text-center mb-5">
+            
+            <div class="card ">
+                
+                <div class='photo_top_group_card'>
+                    <img class="card-img-top img-fluid profile_back" src=<%=@user.background%> >
+                </div>
+                
+                <div class="card-block text-center center_card_groups_index">
+                    
+                    <img class= 'profile rounded-circle img-fluid' src=<%=@user.avatar%> alt="">
+                    
+                    <a href=<%= user_show_url(user_id: @user.id, current_id: current_user.id) %> >
+                        <h4 class="card-title mt-3">
+                            <%=@user.email.split('@').first+'@'%>
+                        </h4>
+                    </a>
+
+                    <div class="meta meta_card_relative">
+                        <h6 class='meta_card_group_index profile_description text-left'><%=@user.description%></h6>
+                    </div>
+
+                    <div class="card-text card-text_groups d-flex justify-content-between">
+                        <div class='d-flex' >
+                            <p class = 'profile_followers' style='margin-right:1rem'>
+                                <span style = 'font-weight:bold'>
+                                    <%= @user.listenings.count %>
+                                </span>  Following
+                            </p>
+                            
+                            <p class = 'profile_followers'>
+                                <span style = 'font-weight:bold'>
+                                    <%=followers_count(@user.id) %>
+                                </span>  
+                                <a href=<%= show_followers_url(user_id: @user.id) %>> Followers</a>
+                            </p>
+                        </div>
+                        <div sytle='position:relative'>
+                            <%=new_post_link(@user)%>
+                        </div>
+                        
+                    </div>
+                        
                 </div>
 
-                <ul class="list-unstyled components">
-                    <p>Dummy Heading</p>
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li>
-                                <a href="#">Home 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-
-    </div>
-    <div id="content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-
-                <button type="button" id="sidebarCollapse" class="btn btn-info">
-                    <i class="fas fa-align-left"></i>
-                    <span>Toggle Sidebar</span>
-                </button>
-
             </div>
-        </nav>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    <div class="container">
-        <div class="rojo">
-        THIS IS ROJO
+                
+            
         </div>
+        
+        <div class="division d-flex flex-column justify-content-center container">
+        </div>
+        
     </div>
+
 </div>
 
+<% @user.posts.sort_by(&:created_at).reverse.each do |post| %>
+    <div class="container d-flex flex-column justify-content-center cards_post">
+        <div class="card cards_general align-content-center justify-content-center">
+            
+            <div style = 'position:relative'>
+                <img class="photo_card" src=<%=post.avatar%> alt="Post Image">
+                <img src=<%= post.user.avatar  %> alt="" class='img-fluid rounded-circle avatar_post'>
+            </div>
+            
+            <div class="card-body " id='show_cards_user'>
+                
+                <p class="card-text post_content">
+                    <%= post.content %>
+                </p>
+                
+                <p style='padding-bottom:2rem;font-weight: 800;'>
+                    <%= time_ago_in_words(post.created_at) + ' ago' %> 
+                </p>
+
+                <div class="post_creator d-flex justify-content-between">
+                    
+                    <p class = 'text-center user_email_post' >
+                        <a href=<%= user_show_url(user_id: post.user_id, current_id: current_user.id) %>>
+                            <%= post.user.email.split('@').first+'@' %>
+                        </a>
+                    </p>
+                    <div class="votes_post d-flex justify-content-around">
+                        
+                        <%=down_links(post.id)%>          
+                    
+                            <span class="counter" style = <%=counter_color(post.counter)%>>
+                                <%=post.counter%>
+                            </span>                    
+
+                        <%=up_links(post.id)%>
+
+                    </div>
+
+                </div>
+                                                
+            </div>
+
+        </div>
+    </div>
+<%end%>

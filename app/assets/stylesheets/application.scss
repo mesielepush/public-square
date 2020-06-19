@@ -1,0 +1,298 @@
+
+@import 'bootstrap/scss/bootstrap';
+@import 'likes';
+@import 'listenings';
+@import 'posts';
+@import 'users';
+
+
+$twitter-dark: #36263a;
+$twitter-blue: #00aced;
+$twitter-grey: #666;
+$twitter-light-grey: #ccc;
+body {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    
+}
+.left_bar{
+    
+    background-color:#1B2A3D;
+    top:0;
+    z-index: 10001!important;
+    height: 200rem;
+    width: 17rem;
+    .asd{
+        color:#677D92;
+        font-size: 1.5rem;
+    }
+    .left_bar_photo{
+        height: 75px!important;
+        width: 85px!important;
+    }
+    .profile_left_bar{
+        height: 8.6rem;;
+        border: 2px solid #202c3d
+    }
+    .inner_profile_left_bar{
+        position: relative;
+        top:2.5rem;
+    }
+    .followers_count{
+        position: relative;
+        
+    }
+    a{
+        text-decoration: none;
+        .followers_left{
+            color: #677D92;
+            border: 2px solid #131f30;
+            width: 8.5rem;
+    
+            .numbers{
+                position: relative;
+                font-size: 1.4rem;;
+                font-weight: 800;
+                top: 0.2rem;
+                color:#A5B1BD;
+            }
+            .followers_span{
+                position: relative;
+                bottom: 0.3rem;
+                font-size: 1rem;
+                color:#677D92;
+            }
+        }
+    }
+    a:hover{
+        text-emphasis: none;
+        background-color: #52A6E6;
+        .followers_left{
+            span{
+                color:white
+            }
+            
+        }
+        
+    }
+    
+    .left_bar_list{
+
+        position: relative;
+        left:-2rem;
+        top:1rem;
+        a{
+            li{
+                position: relative;
+                display: flex;
+                justify-content: left;;
+                height: 5rem;
+                background-color: red($color: #cec3c3)!important;
+                color:#677D92;
+                svg{
+                   position: relative;
+                   fill:#677D92;
+                   top:1.5rem;
+                   left:1.2rem;
+                }
+                span{
+                    position:relative;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    top:1.5rem;
+                    left: 3rem
+                }
+            }
+        }
+        a:hover{
+            text-decoration: none!important;
+            li{
+                width: 16.5rem;
+                color:white;
+                background-color: #52A6E6!important;
+                svg{
+                    fill:white;
+                }
+            }
+            
+            
+            
+        }
+        
+    }
+
+}
+
+
+.nav-bar{
+    background-color: #52A6E6;
+    position: fixed;
+    top:0;
+    width: 100%;
+    clear: both;
+    z-index: 100!important;
+    height: 9rem;
+    
+}
+#config_nav{
+    margin-top: 2.5rem;
+    max-width: 4rem;
+    margin-right: 2rem;
+}
+.lef_nav_icons{
+    display: block;
+    color: #213346!important;
+    text-align: center;
+    font-weight: 500;
+    padding: 14px 16px;
+    text-decoration: none;
+    background:#F7C099;
+    height: 5rem;
+    box-shadow: -1px 11px 31px 0px rgba(0,0,0,0.75);
+            }
+.lef_nav_icons:hover {
+    background-color: rgb(211, 112, 112)!important;
+}
+
+#configuration{
+
+    max-width: 4rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.conf{
+    transform: scaleX(-1);
+}
+.some-class {
+    height: 15rem!important;
+    width:15rem!important;
+    position: relative;
+    top: 2.5rem;
+    left: 17rem; 
+    fill: #ffffff;
+    
+    
+  }
+
+.right-pane {
+    
+    position: fixed;
+    top:6rem;
+    right:0;
+    background-color: #1B2A3D;
+    height: 100%;
+    width: 15rem;
+    border-left:1px solid rgba(133, 144, 175, 0.5);
+    z-index: 2!important;
+    padding-top: 3rem!important;
+    overflow-y: scroll;
+    ul{
+        position: relative;
+        right:1rem;
+        li{
+            list-style-type: none;
+
+            a {
+                color: #61768a;
+                position:relative;
+                left:-2.7rem;
+                text-decoration: none!important;
+                display: flex;
+                text-align: center;
+                font-size: 1rem;
+                padding: 1rem;
+                padding-bottom: 1rem;
+                width: 15.5rem;
+                height: 4rem;;
+                img{
+                    position: relative;
+                    left: 1rem;;
+                    width: 30px;
+                    height: 30px;
+                }
+                span{
+                    font-weight: 700;
+                    position: relative;
+                    left:2.2rem;
+                    
+                }
+                
+            }
+            a:hover{
+                
+                text-decoration: none!important;
+                background: #52A6E6;
+                color:white;
+                
+            }
+
+        }
+    }
+    
+    // position: fixed;
+}
+.right-pane::-webkit-scrollbar {
+    display: none;
+  }
+.navbar.navbar-expand-lg {
+    margin-bottom: 0;
+    border-radius: 0; // position: fixed;
+    position: sticky;
+}
+
+
+
+.nav_adjust {
+    position: fixed;
+    top:0;
+}
+.user_email_right{
+    color: #677D92;
+    height: 5rem;;
+    
+    font-size: 1.5rem;;
+    span{
+        position: relative;
+        top:1.5rem;
+        left:0.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 5px solid #132236;
+    }
+}
+
+
+.sign_form{
+    background-color: white;
+    
+}
+#my_tweets_title{
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 2rem;
+    color: #27152b
+}
+.follow-data{
+    position: relative;
+    
+}
+.front_page_icon{
+    display: flex;
+    justify-content: center;
+    
+    .face {
+        position: relative;
+        top:2rem;
+        left:9rem;
+        height: 25rem!important;
+        width:25rem!important;
+        fill: #ffffff;
+        
+      }
+}
+.new_post, .sign_up{
+    position:relative;
+    top:13rem;
+    background-color:white
+}

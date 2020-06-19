@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
     <title>PublicSquare</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,22 +15,20 @@
   </head>
 
   <body>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render 'layouts/navbar' %>
+    
+    <div class="wrapper">
+      <main class="content">
+        <%=left_bar%>
+        
+      </main>
+      
+      <%= yield %>
 
+    </div>
 
-      <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-            Bootstrap
-        </a>
-      </nav>
-
-
-
-
-
-    <%= yield %>
   </body>
   
 </html>

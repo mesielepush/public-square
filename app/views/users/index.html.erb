@@ -1,0 +1,90 @@
+<%=render 'layouts/right_bar_user'%>
+<section style = 'margin-left:1rem;'>
+    <div class="col d-flex justify-content-center align-items-center">
+        <div id='form_posts_index'>
+            <div class="container d-flex justify-content-center ">
+                <%= form_for(@post, url: post_new_url(@post)) do |f| %>
+                    <div class="field text-center" style = 'margin-bottom:0.2rem'>
+                        
+                        <%= f.text_field :avatar,  placeholder: "PhotoUrl", autofocus: true, :size => 97  ,id:'avatar'%>
+                    </div>
+                    
+                    <div class="field text-center" >
+                        <%= f.text_field :content,  placeholder: "Message", autofocus: true, :size => 97 ,id:'content'%>
+                    </div>
+
+                    <%= f.hidden_field :counter, value: 0 %>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    
+                    <%= f.submit "NewPost", class: 'btn btn-secondary', style: "background-color:#52A6E6",id: 'commit'%>
+
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container recent_top d-flex text-center mt-3">
+    
+        <a href=<%= root_url(user_id: current_user.id, current_id: current_user.id, sorted: 'counter') %>>
+            <div class=<%=sorted_top(@sorted)%>>
+                Top
+            </div>
+        </a>
+        
+        <a href=<%= root_url(user_id: current_user.id, current_id: current_user.id, sorted: 'time_ago') %>>
+            <div class=<%=sorted_latest(@sorted)%>>
+                Latest
+            </div>
+        </a>
+    
+</div>
+
+<div class="container">
+    <% @posts.each do |post| %>
+        <div class="container d-flex flex-column justify-content-center cards_post">
+            <div class="card cards_general align-content-center justify-content-center">
+                
+                <div style = 'position:relative'>
+                    <img class="photo_card" src=<%=post.avatar%> alt="Post Image">
+                    
+                    <img src=<%= post.user.avatar  %> alt="" class='img-fluid rounded-circle avatar_post'>
+                </div>
+                
+                <div class="card-body " id='show_cards_user'>
+                    
+                    <p class="card-text post_content">
+                        <%= post.content %>
+                    </p>
+                    
+                    <p style='padding-bottom:2rem;font-weight: 800;'>
+                        <%= time_ago_in_words(post.created_at) + ' ago' %> 
+                    </p>
+
+                    <div class="post_creator d-flex justify-content-between">
+                        
+                        <p class = 'text-center user_email_post'>
+                            <a href=<%= user_show_url(user_id: post.user_id, current_id: current_user.id) %>>
+                                <%= post.user.email.split('@').first+'@' %>
+                            </a>
+                        </p>
+                        <div class="votes_post d-flex justify-content-around">
+                        
+                            <%=down_links(post.id)%>          
+                    
+                                <span class="counter" style = <%=counter_color(post.counter)%>>
+                                    <%=post.counter%>
+                                </span>                    
+
+                            <%=up_links(post.id)%>
+                            
+                        </div>
+
+                    </div>
+                                                    
+                </div>
+
+            </div>
+        </div>
+    <%end%>
+</div>

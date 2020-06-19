@@ -1,0 +1,26 @@
+<div class="cards_user container d-flex flex-column justify-content-center cards_post" style = 'margin-top:8rem;'>
+    <div class="card align-content-center justify-content-center"  style="width: 40rem;position: relative;left:16rem!important;">
+        <img class="card-img-top photo_card" src=<%=@post.avatar%> alt="Post Image">
+        <div class="card-body " id='show_cards_user'>
+            <p class = 'text-center' style='background:rgba(182, 177, 177,.5)'>
+                <%= User.find_by_id(@post.user_id).email %>
+            </p>
+            <p class="card-text">
+                <%= @post.content %>                        
+            </p>
+            <p>
+                <%= time_ago_in_words(@post.created_at) + ' ago' %> 
+            </p>
+            <div class="likes_counter text-center d-flex justify-content-around">
+                <%=down_links(@post.id)%>          
+                    
+                    <span class="counter" style = <%=counter_color(@post.counter)%>>
+                        <%=@post.counter%>
+                    </span>                    
+
+                <%=up_links(@post.id)%>
+                
+            </div>
+        </div>
+    </div>
+</div>
